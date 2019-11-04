@@ -28,66 +28,147 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label clubNameLabel;
+            System.Windows.Forms.Label clubNameShortLabel;
+            System.Windows.Forms.Label clubCoachLabel;
+            System.Windows.Forms.Label clubCoachTitleLabel;
+            System.Windows.Forms.Label clubLogoLabel;
+            System.Windows.Forms.Label clubColorLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTeam));
             this.cdTeam = new System.Windows.Forms.ColorDialog();
             this.button1 = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.miDeleteTeam = new System.Windows.Forms.ToolStripMenuItem();
-            this.miAddTeam = new System.Windows.Forms.ToolStripMenuItem();
-            this.управлениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ofdLogo = new System.Windows.Forms.OpenFileDialog();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.tbLogo = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.tbTeamNameShort = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tbTeamCoachTitle = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tbTeamNationShort = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tbTeamNation = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tbTeamName = new System.Windows.Forms.TextBox();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.tbTeamCoach = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ID_TTTeam = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.playerFlag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnLogo = new System.Windows.Forms.Button();
+            this.btnColor = new System.Windows.Forms.Button();
+            this.clubColorTextBox = new System.Windows.Forms.TextBox();
+            this.teamBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseDataSet = new titleuefafutsal.databaseDataSet();
+            this.clubLogoTextBox = new System.Windows.Forms.TextBox();
+            this.clubCoachTitleTextBox = new System.Windows.Forms.TextBox();
+            this.clubCoachTextBox = new System.Windows.Forms.TextBox();
+            this.clubNameShortTextBox = new System.Windows.Forms.TextBox();
+            this.clubNameTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbTeamList = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.sbAddPlayer = new System.Windows.Forms.ToolStripButton();
-            this.sbEditPlayer = new System.Windows.Forms.ToolStripButton();
-            this.sbDeletePlayer = new System.Windows.Forms.ToolStripButton();
-            this.dgvTeamList = new System.Windows.Forms.DataGridView();
-            this.isVisible = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.playerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.playerAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.playerNation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.playerNationShort = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.playerRanking = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.playerHand = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem1 = new System.Windows.Forms.ToolStripButton();
+            this.playerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem1 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem1 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem1 = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.playerBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.playerDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teamTableAdapter = new titleuefafutsal.databaseDataSetTableAdapters.TeamTableAdapter();
+            this.tableAdapterManager = new titleuefafutsal.databaseDataSetTableAdapters.TableAdapterManager();
+            this.playerTableAdapter = new titleuefafutsal.databaseDataSetTableAdapters.PlayerTableAdapter();
+            this.teamBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.teamBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            clubNameLabel = new System.Windows.Forms.Label();
+            clubNameShortLabel = new System.Windows.Forms.Label();
+            clubCoachLabel = new System.Windows.Forms.Label();
+            clubCoachTitleLabel = new System.Windows.Forms.Label();
+            clubLogoLabel = new System.Windows.Forms.Label();
+            clubColorLabel = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTeamList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
+            this.bindingNavigator1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamBindingNavigator)).BeginInit();
+            this.teamBindingNavigator.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // clubNameLabel
+            // 
+            clubNameLabel.AutoSize = true;
+            clubNameLabel.Location = new System.Drawing.Point(6, 16);
+            clubNameLabel.Name = "clubNameLabel";
+            clubNameLabel.Size = new System.Drawing.Size(60, 13);
+            clubNameLabel.TabIndex = 0;
+            clubNameLabel.Text = "Название:";
+            // 
+            // clubNameShortLabel
+            // 
+            clubNameShortLabel.AutoSize = true;
+            clubNameShortLabel.Location = new System.Drawing.Point(279, 16);
+            clubNameShortLabel.Name = "clubNameShortLabel";
+            clubNameShortLabel.Size = new System.Drawing.Size(57, 13);
+            clubNameShortLabel.TabIndex = 2;
+            clubNameShortLabel.Text = "короткое:";
+            // 
+            // clubCoachLabel
+            // 
+            clubCoachLabel.AutoSize = true;
+            clubCoachLabel.Location = new System.Drawing.Point(6, 42);
+            clubCoachLabel.Name = "clubCoachLabel";
+            clubCoachLabel.Size = new System.Drawing.Size(47, 13);
+            clubCoachLabel.TabIndex = 4;
+            clubCoachLabel.Text = "Тренер:";
+            // 
+            // clubCoachTitleLabel
+            // 
+            clubCoachTitleLabel.AutoSize = true;
+            clubCoachTitleLabel.Location = new System.Drawing.Point(279, 42);
+            clubCoachTitleLabel.Name = "clubCoachTitleLabel";
+            clubCoachTitleLabel.Size = new System.Drawing.Size(65, 13);
+            clubCoachTitleLabel.TabIndex = 6;
+            clubCoachTitleLabel.Text = "должность:";
+            // 
+            // clubLogoLabel
+            // 
+            clubLogoLabel.AutoSize = true;
+            clubLogoLabel.Location = new System.Drawing.Point(6, 68);
+            clubLogoLabel.Name = "clubLogoLabel";
+            clubLogoLabel.Size = new System.Drawing.Size(52, 13);
+            clubLogoLabel.TabIndex = 8;
+            clubLogoLabel.Text = "Логотип:";
+            // 
+            // clubColorLabel
+            // 
+            clubColorLabel.AutoSize = true;
+            clubColorLabel.Location = new System.Drawing.Point(279, 71);
+            clubColorLabel.Name = "clubColorLabel";
+            clubColorLabel.Size = new System.Drawing.Size(35, 13);
+            clubColorLabel.TabIndex = 10;
+            clubColorLabel.Text = "Цвет:";
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.Location = new System.Drawing.Point(517, 631);
+            this.button1.Location = new System.Drawing.Point(511, 481);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 8;
@@ -96,7 +177,8 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(612, 631);
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Location = new System.Drawing.Point(606, 481);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 7;
@@ -104,420 +186,529 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // miDeleteTeam
-            // 
-            this.miDeleteTeam.Name = "miDeleteTeam";
-            this.miDeleteTeam.Size = new System.Drawing.Size(180, 22);
-            this.miDeleteTeam.Text = "Удалить команду";
-            // 
-            // miAddTeam
-            // 
-            this.miAddTeam.Name = "miAddTeam";
-            this.miAddTeam.Size = new System.Drawing.Size(180, 22);
-            this.miAddTeam.Text = "Добавить команду";
-            this.miAddTeam.Click += new System.EventHandler(this.miAddTeam_Click);
-            // 
-            // управлениеToolStripMenuItem
-            // 
-            this.управлениеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miAddTeam,
-            this.miDeleteTeam});
-            this.управлениеToolStripMenuItem.Name = "управлениеToolStripMenuItem";
-            this.управлениеToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
-            this.управлениеToolStripMenuItem.Text = "Управление";
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.управлениеToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(758, 24);
-            this.menuStrip1.TabIndex = 6;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
             // ofdLogo
             // 
             this.ofdLogo.Filter = "PNG|*.png";
             this.ofdLogo.RestoreDirectory = true;
             this.ofdLogo.Title = "Выбор логотипа";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(419, 122);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 22);
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(386, 126);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Цвет:";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(454, 121);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(30, 23);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "...";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.pictureBox1);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.tbLogo);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.tbTeamNameShort);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.tbTeamCoachTitle);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.tbTeamNationShort);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.tbTeamNation);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.tbTeamName);
-            this.groupBox2.Controls.Add(this.pbLogo);
-            this.groupBox2.Controls.Add(this.tbTeamCoach);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(6, 11);
+            this.groupBox2.Controls.Add(this.btnLogo);
+            this.groupBox2.Controls.Add(this.btnColor);
+            this.groupBox2.Controls.Add(clubColorLabel);
+            this.groupBox2.Controls.Add(this.clubColorTextBox);
+            this.groupBox2.Controls.Add(clubLogoLabel);
+            this.groupBox2.Controls.Add(this.clubLogoTextBox);
+            this.groupBox2.Controls.Add(clubCoachTitleLabel);
+            this.groupBox2.Controls.Add(this.clubCoachTitleTextBox);
+            this.groupBox2.Controls.Add(clubCoachLabel);
+            this.groupBox2.Controls.Add(this.clubCoachTextBox);
+            this.groupBox2.Controls.Add(clubNameShortLabel);
+            this.groupBox2.Controls.Add(this.clubNameShortTextBox);
+            this.groupBox2.Controls.Add(clubNameLabel);
+            this.groupBox2.Controls.Add(this.clubNameTextBox);
+            this.groupBox2.Location = new System.Drawing.Point(6, 39);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(733, 159);
+            this.groupBox2.Size = new System.Drawing.Size(671, 97);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             // 
-            // tbLogo
+            // btnLogo
             // 
-            this.tbLogo.Location = new System.Drawing.Point(100, 123);
-            this.tbLogo.Name = "tbLogo";
-            this.tbLogo.Size = new System.Drawing.Size(280, 20);
-            this.tbLogo.TabIndex = 16;
+            this.btnLogo.Location = new System.Drawing.Point(244, 62);
+            this.btnLogo.Name = "btnLogo";
+            this.btnLogo.Size = new System.Drawing.Size(24, 24);
+            this.btnLogo.TabIndex = 13;
+            this.btnLogo.Text = "...";
+            this.btnLogo.UseVisualStyleBackColor = true;
+            this.btnLogo.Click += new System.EventHandler(this.btnLogo_Click);
             // 
-            // label7
+            // btnColor
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 126);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 13);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Логотип:";
+            this.btnColor.Location = new System.Drawing.Point(456, 60);
+            this.btnColor.Name = "btnColor";
+            this.btnColor.Size = new System.Drawing.Size(24, 24);
+            this.btnColor.TabIndex = 12;
+            this.btnColor.Text = "...";
+            this.btnColor.UseVisualStyleBackColor = true;
+            this.btnColor.Click += new System.EventHandler(this.button2_Click);
             // 
-            // tbTeamNameShort
+            // clubColorTextBox
             // 
-            this.tbTeamNameShort.Location = new System.Drawing.Point(308, 19);
-            this.tbTeamNameShort.Name = "tbTeamNameShort";
-            this.tbTeamNameShort.Size = new System.Drawing.Size(72, 20);
-            this.tbTeamNameShort.TabIndex = 2;
+            this.clubColorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.teamBindingSource, "ClubColor", true));
+            this.clubColorTextBox.Location = new System.Drawing.Point(350, 64);
+            this.clubColorTextBox.Name = "clubColorTextBox";
+            this.clubColorTextBox.Size = new System.Drawing.Size(100, 20);
+            this.clubColorTextBox.TabIndex = 11;
+            this.clubColorTextBox.TextChanged += new System.EventHandler(this.clubColorTextBox_TextChanged);
             // 
-            // label6
+            // teamBindingSource
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(245, 22);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 13);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "короткое:";
+            this.teamBindingSource.DataMember = "Team";
+            this.teamBindingSource.DataSource = this.databaseDataSet;
+            this.teamBindingSource.CurrentChanged += new System.EventHandler(this.teamBindingSource_CurrentChanged);
             // 
-            // tbTeamCoachTitle
+            // databaseDataSet
             // 
-            this.tbTeamCoachTitle.Location = new System.Drawing.Point(100, 97);
-            this.tbTeamCoachTitle.Name = "tbTeamCoachTitle";
-            this.tbTeamCoachTitle.Size = new System.Drawing.Size(280, 20);
-            this.tbTeamCoachTitle.TabIndex = 6;
+            this.databaseDataSet.DataSetName = "databaseDataSet";
+            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label5
+            // clubLogoTextBox
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 100);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Должность:";
+            this.clubLogoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.teamBindingSource, "ClubLogo", true));
+            this.clubLogoTextBox.Location = new System.Drawing.Point(74, 65);
+            this.clubLogoTextBox.Name = "clubLogoTextBox";
+            this.clubLogoTextBox.Size = new System.Drawing.Size(164, 20);
+            this.clubLogoTextBox.TabIndex = 9;
             // 
-            // tbTeamNationShort
+            // clubCoachTitleTextBox
             // 
-            this.tbTeamNationShort.Location = new System.Drawing.Point(308, 45);
-            this.tbTeamNationShort.Name = "tbTeamNationShort";
-            this.tbTeamNationShort.Size = new System.Drawing.Size(72, 20);
-            this.tbTeamNationShort.TabIndex = 4;
+            this.clubCoachTitleTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.teamBindingSource, "ClubCoachTitle", true));
+            this.clubCoachTitleTextBox.Location = new System.Drawing.Point(350, 39);
+            this.clubCoachTitleTextBox.Name = "clubCoachTitleTextBox";
+            this.clubCoachTitleTextBox.Size = new System.Drawing.Size(100, 20);
+            this.clubCoachTitleTextBox.TabIndex = 7;
             // 
-            // label4
+            // clubCoachTextBox
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(245, 48);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "короткое:";
+            this.clubCoachTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.teamBindingSource, "ClubCoach", true));
+            this.clubCoachTextBox.Location = new System.Drawing.Point(74, 39);
+            this.clubCoachTextBox.Name = "clubCoachTextBox";
+            this.clubCoachTextBox.Size = new System.Drawing.Size(193, 20);
+            this.clubCoachTextBox.TabIndex = 5;
             // 
-            // tbTeamNation
+            // clubNameShortTextBox
             // 
-            this.tbTeamNation.Location = new System.Drawing.Point(100, 45);
-            this.tbTeamNation.Name = "tbTeamNation";
-            this.tbTeamNation.Size = new System.Drawing.Size(139, 20);
-            this.tbTeamNation.TabIndex = 3;
+            this.clubNameShortTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.teamBindingSource, "ClubNameShort", true));
+            this.clubNameShortTextBox.Location = new System.Drawing.Point(350, 13);
+            this.clubNameShortTextBox.Name = "clubNameShortTextBox";
+            this.clubNameShortTextBox.Size = new System.Drawing.Size(100, 20);
+            this.clubNameShortTextBox.TabIndex = 3;
             // 
-            // label3
+            // clubNameTextBox
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Страна:";
-            // 
-            // tbTeamName
-            // 
-            this.tbTeamName.Location = new System.Drawing.Point(100, 19);
-            this.tbTeamName.Name = "tbTeamName";
-            this.tbTeamName.Size = new System.Drawing.Size(139, 20);
-            this.tbTeamName.TabIndex = 1;
-            // 
-            // pbLogo
-            // 
-            this.pbLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbLogo.Location = new System.Drawing.Point(386, 19);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(98, 98);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLogo.TabIndex = 4;
-            this.pbLogo.TabStop = false;
-            // 
-            // tbTeamCoach
-            // 
-            this.tbTeamCoach.Location = new System.Drawing.Point(100, 71);
-            this.tbTeamCoach.Name = "tbTeamCoach";
-            this.tbTeamCoach.Size = new System.Drawing.Size(280, 20);
-            this.tbTeamCoach.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Тренер:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Название:";
-            // 
-            // ID_TTTeam
-            // 
-            this.ID_TTTeam.DataPropertyName = "ID_TTTeam";
-            this.ID_TTTeam.HeaderText = "ID_TTTeam";
-            this.ID_TTTeam.Name = "ID_TTTeam";
-            this.ID_TTTeam.ReadOnly = true;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // playerFlag
-            // 
-            this.playerFlag.DataPropertyName = "PlayerFlag";
-            this.playerFlag.HeaderText = "Флаг";
-            this.playerFlag.Name = "playerFlag";
-            this.playerFlag.ReadOnly = true;
-            this.playerFlag.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.playerFlag.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.clubNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.teamBindingSource, "ClubName", true));
+            this.clubNameTextBox.Location = new System.Drawing.Point(74, 13);
+            this.clubNameTextBox.Name = "clubNameTextBox";
+            this.clubNameTextBox.Size = new System.Drawing.Size(193, 20);
+            this.clubNameTextBox.TabIndex = 1;
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.cbTeamList);
+            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Location = new System.Drawing.Point(4, 27);
+            this.groupBox1.Location = new System.Drawing.Point(4, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(746, 577);
+            this.groupBox1.Size = new System.Drawing.Size(684, 447);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Команда";
             // 
-            // cbTeamList
+            // comboBox1
             // 
-            this.cbTeamList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTeamList.FormattingEnabled = true;
-            this.cbTeamList.Location = new System.Drawing.Point(106, 0);
-            this.cbTeamList.Name = "cbTeamList";
-            this.cbTeamList.Size = new System.Drawing.Size(269, 21);
-            this.cbTeamList.TabIndex = 16;
+            this.comboBox1.DataSource = this.teamBindingSource;
+            this.comboBox1.DisplayMember = "ClubName";
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(6, 16);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(265, 21);
+            this.comboBox1.TabIndex = 17;
+            this.comboBox1.ValueMember = "IDClub";
             // 
             // groupBox3
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.toolStrip1);
-            this.groupBox3.Controls.Add(this.dgvTeamList);
-            this.groupBox3.Location = new System.Drawing.Point(6, 176);
+            this.groupBox3.Controls.Add(this.bindingNavigator1);
+            this.groupBox3.Controls.Add(this.playerDataGridView);
+            this.groupBox3.Location = new System.Drawing.Point(6, 142);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(733, 395);
+            this.groupBox3.Size = new System.Drawing.Size(671, 299);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Состав";
             // 
-            // toolStrip1
+            // bindingNavigator1
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sbAddPlayer,
-            this.sbEditPlayer,
-            this.sbDeletePlayer});
-            this.toolStrip1.Location = new System.Drawing.Point(3, 16);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(727, 25);
-            this.toolStrip1.TabIndex = 1;
-            this.toolStrip1.Text = "toolStrip1";
+            this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem1;
+            this.bindingNavigator1.BindingSource = this.playerBindingSource;
+            this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem1;
+            this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem1;
+            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem1,
+            this.bindingNavigatorMovePreviousItem1,
+            this.bindingNavigatorSeparator3,
+            this.bindingNavigatorPositionItem1,
+            this.bindingNavigatorCountItem1,
+            this.bindingNavigatorSeparator4,
+            this.bindingNavigatorMoveNextItem1,
+            this.bindingNavigatorMoveLastItem1,
+            this.bindingNavigatorSeparator5,
+            this.bindingNavigatorAddNewItem1,
+            this.bindingNavigatorDeleteItem1,
+            this.playerBindingNavigatorSaveItem});
+            this.bindingNavigator1.Location = new System.Drawing.Point(3, 16);
+            this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem1;
+            this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem1;
+            this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem1;
+            this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
+            this.bindingNavigator1.Name = "bindingNavigator1";
+            this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem1;
+            this.bindingNavigator1.Size = new System.Drawing.Size(665, 25);
+            this.bindingNavigator1.TabIndex = 1;
+            this.bindingNavigator1.Text = "bindingNavigator1";
             // 
-            // sbAddPlayer
+            // bindingNavigatorAddNewItem1
             // 
-            this.sbAddPlayer.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.sbAddPlayer.Image = ((System.Drawing.Image)(resources.GetObject("sbAddPlayer.Image")));
-            this.sbAddPlayer.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.sbAddPlayer.Name = "sbAddPlayer";
-            this.sbAddPlayer.Size = new System.Drawing.Size(23, 22);
-            this.sbAddPlayer.Text = "toolStripButton1";
+            this.bindingNavigatorAddNewItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem1.Image")));
+            this.bindingNavigatorAddNewItem1.Name = "bindingNavigatorAddNewItem1";
+            this.bindingNavigatorAddNewItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem1.Text = "Добавить";
             // 
-            // sbEditPlayer
+            // playerBindingSource
             // 
-            this.sbEditPlayer.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.sbEditPlayer.Image = ((System.Drawing.Image)(resources.GetObject("sbEditPlayer.Image")));
-            this.sbEditPlayer.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.sbEditPlayer.Name = "sbEditPlayer";
-            this.sbEditPlayer.Size = new System.Drawing.Size(23, 22);
-            this.sbEditPlayer.Text = "toolStripButton2";
+            this.playerBindingSource.DataMember = "Player";
+            this.playerBindingSource.DataSource = this.databaseDataSet;
             // 
-            // sbDeletePlayer
+            // bindingNavigatorCountItem1
             // 
-            this.sbDeletePlayer.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.sbDeletePlayer.Image = ((System.Drawing.Image)(resources.GetObject("sbDeletePlayer.Image")));
-            this.sbDeletePlayer.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.sbDeletePlayer.Name = "sbDeletePlayer";
-            this.sbDeletePlayer.Size = new System.Drawing.Size(23, 22);
-            this.sbDeletePlayer.Text = "toolStripButton3";
+            this.bindingNavigatorCountItem1.Name = "bindingNavigatorCountItem1";
+            this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(43, 22);
+            this.bindingNavigatorCountItem1.Text = "для {0}";
+            this.bindingNavigatorCountItem1.ToolTipText = "Общее число элементов";
             // 
-            // dgvTeamList
+            // bindingNavigatorDeleteItem1
             // 
-            this.dgvTeamList.AllowUserToAddRows = false;
-            this.dgvTeamList.AllowUserToDeleteRows = false;
-            this.dgvTeamList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.bindingNavigatorDeleteItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem1.Image")));
+            this.bindingNavigatorDeleteItem1.Name = "bindingNavigatorDeleteItem1";
+            this.bindingNavigatorDeleteItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem1.Text = "Удалить";
+            // 
+            // bindingNavigatorMoveFirstItem1
+            // 
+            this.bindingNavigatorMoveFirstItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem1.Image")));
+            this.bindingNavigatorMoveFirstItem1.Name = "bindingNavigatorMoveFirstItem1";
+            this.bindingNavigatorMoveFirstItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem1.Text = "Переместить в начало";
+            // 
+            // bindingNavigatorMovePreviousItem1
+            // 
+            this.bindingNavigatorMovePreviousItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem1.Image")));
+            this.bindingNavigatorMovePreviousItem1.Name = "bindingNavigatorMovePreviousItem1";
+            this.bindingNavigatorMovePreviousItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem1.Text = "Переместить назад";
+            // 
+            // bindingNavigatorSeparator3
+            // 
+            this.bindingNavigatorSeparator3.Name = "bindingNavigatorSeparator3";
+            this.bindingNavigatorSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem1
+            // 
+            this.bindingNavigatorPositionItem1.AccessibleName = "Положение";
+            this.bindingNavigatorPositionItem1.AutoSize = false;
+            this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem1";
+            this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem1.Text = "0";
+            this.bindingNavigatorPositionItem1.ToolTipText = "Текущее положение";
+            // 
+            // bindingNavigatorSeparator4
+            // 
+            this.bindingNavigatorSeparator4.Name = "bindingNavigatorSeparator4";
+            this.bindingNavigatorSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem1
+            // 
+            this.bindingNavigatorMoveNextItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem1.Image")));
+            this.bindingNavigatorMoveNextItem1.Name = "bindingNavigatorMoveNextItem1";
+            this.bindingNavigatorMoveNextItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem1.Text = "Переместить вперед";
+            // 
+            // bindingNavigatorMoveLastItem1
+            // 
+            this.bindingNavigatorMoveLastItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem1.Image")));
+            this.bindingNavigatorMoveLastItem1.Name = "bindingNavigatorMoveLastItem1";
+            this.bindingNavigatorMoveLastItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem1.Text = "Переместить в конец";
+            // 
+            // bindingNavigatorSeparator5
+            // 
+            this.bindingNavigatorSeparator5.Name = "bindingNavigatorSeparator5";
+            this.bindingNavigatorSeparator5.Size = new System.Drawing.Size(6, 25);
+            // 
+            // playerBindingNavigatorSaveItem
+            // 
+            this.playerBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.playerBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("playerBindingNavigatorSaveItem.Image")));
+            this.playerBindingNavigatorSaveItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.playerBindingNavigatorSaveItem.Name = "playerBindingNavigatorSaveItem";
+            this.playerBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.playerBindingNavigatorSaveItem.Text = "playerBindingNavigatorSaveItem";
+            this.playerBindingNavigatorSaveItem.Click += new System.EventHandler(this.playerBindingNavigatorSaveItem_Click);
+            // 
+            // playerDataGridView
+            // 
+            this.playerDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvTeamList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTeamList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.isVisible,
-            this.playerName,
-            this.playerAge,
-            this.playerNation,
-            this.playerNationShort,
-            this.playerRanking,
-            this.playerHand,
-            this.playerFlag,
-            this.ID,
-            this.ID_TTTeam});
-            this.dgvTeamList.Location = new System.Drawing.Point(6, 44);
-            this.dgvTeamList.MultiSelect = false;
-            this.dgvTeamList.Name = "dgvTeamList";
-            this.dgvTeamList.ReadOnly = true;
-            this.dgvTeamList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTeamList.Size = new System.Drawing.Size(724, 345);
-            this.dgvTeamList.TabIndex = 0;
+            this.playerDataGridView.AutoGenerateColumns = false;
+            this.playerDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.playerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.playerDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCheckBoxColumn1,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5});
+            this.playerDataGridView.DataSource = this.playerBindingSource;
+            this.playerDataGridView.Location = new System.Drawing.Point(6, 46);
+            this.playerDataGridView.MultiSelect = false;
+            this.playerDataGridView.Name = "playerDataGridView";
+            this.playerDataGridView.Size = new System.Drawing.Size(658, 246);
+            this.playerDataGridView.TabIndex = 0;
             // 
-            // isVisible
+            // dataGridViewCheckBoxColumn1
             // 
-            this.isVisible.DataPropertyName = "IsVisible";
-            this.isVisible.HeaderText = "Участвует";
-            this.isVisible.Name = "isVisible";
-            this.isVisible.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "IsVisible";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Видим";
+            this.dataGridViewCheckBoxColumn1.MinimumWidth = 50;
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.Width = 50;
             // 
-            // playerName
+            // dataGridViewTextBoxColumn6
             // 
-            this.playerName.DataPropertyName = "PlayerName";
-            this.playerName.HeaderText = "Имя игрока";
-            this.playerName.Name = "playerName";
-            this.playerName.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "PlayerPosition";
+            this.dataGridViewTextBoxColumn6.FillWeight = 170.068F;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Позиция";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 60;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ToolTipText = "Позиция в списке";
+            this.dataGridViewTextBoxColumn6.Width = 60;
             // 
-            // playerAge
+            // dataGridViewTextBoxColumn2
             // 
-            this.playerAge.DataPropertyName = "PlayerAge";
-            this.playerAge.HeaderText = "Возраст";
-            this.playerAge.Name = "playerAge";
-            this.playerAge.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "PlayerName";
+            this.dataGridViewTextBoxColumn2.FillWeight = 82.48299F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Имя";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ToolTipText = "Имя";
             // 
-            // playerNation
+            // dataGridViewTextBoxColumn3
             // 
-            this.playerNation.DataPropertyName = "PlayerNation";
-            this.playerNation.HeaderText = "Национальность";
-            this.playerNation.Name = "playerNation";
-            this.playerNation.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "PlayerSurname";
+            this.dataGridViewTextBoxColumn3.FillWeight = 82.48299F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Фамилия";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ToolTipText = "Фамилия";
             // 
-            // playerNationShort
+            // dataGridViewTextBoxColumn4
             // 
-            this.playerNationShort.DataPropertyName = "PlayerNationShort";
-            this.playerNationShort.HeaderText = "Национальность сокр.";
-            this.playerNationShort.Name = "playerNationShort";
-            this.playerNationShort.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "PlayerNumber";
+            this.dataGridViewTextBoxColumn4.FillWeight = 82.48299F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Номер";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ToolTipText = "Номер игрока";
             // 
-            // playerRanking
+            // dataGridViewTextBoxColumn5
             // 
-            this.playerRanking.DataPropertyName = "PlayerRanking";
-            this.playerRanking.HeaderText = "Ранг";
-            this.playerRanking.Name = "playerRanking";
-            this.playerRanking.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "PlayerRole";
+            this.dataGridViewTextBoxColumn5.FillWeight = 82.48299F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Амплуа";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ToolTipText = "Амплуа";
             // 
-            // playerHand
+            // teamTableAdapter
             // 
-            this.playerHand.DataPropertyName = "PlayerHand";
-            this.playerHand.HeaderText = "Лево/праворукий";
-            this.playerHand.Name = "playerHand";
-            this.playerHand.ReadOnly = true;
+            this.teamTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.PlayerTableAdapter = this.playerTableAdapter;
+            this.tableAdapterManager.TeamTableAdapter = this.teamTableAdapter;
+            this.tableAdapterManager.UpdateOrder = titleuefafutsal.databaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // playerTableAdapter
+            // 
+            this.playerTableAdapter.ClearBeforeFill = true;
+            // 
+            // teamBindingNavigator
+            // 
+            this.teamBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.teamBindingNavigator.BindingSource = this.teamBindingSource;
+            this.teamBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.teamBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.teamBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.teamBindingNavigatorSaveItem});
+            this.teamBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.teamBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.teamBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.teamBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.teamBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.teamBindingNavigator.Name = "teamBindingNavigator";
+            this.teamBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.teamBindingNavigator.Size = new System.Drawing.Size(696, 25);
+            this.teamBindingNavigator.TabIndex = 9;
+            this.teamBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Добавить";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
+            this.bindingNavigatorCountItem.Text = "для {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Удалить";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Переместить в начало";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Переместить назад";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Положение";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Текущее положение";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // teamBindingNavigatorSaveItem
+            // 
+            this.teamBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.teamBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("teamBindingNavigatorSaveItem.Image")));
+            this.teamBindingNavigatorSaveItem.Name = "teamBindingNavigatorSaveItem";
+            this.teamBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.teamBindingNavigatorSaveItem.Text = "Сохранить данные";
+            this.teamBindingNavigatorSaveItem.Click += new System.EventHandler(this.teamBindingNavigatorSaveItem_Click);
             // 
             // frmTeam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(758, 667);
+            this.ClientSize = new System.Drawing.Size(696, 518);
+            this.Controls.Add(this.teamBindingNavigator);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmTeam";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmTeam";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTeam_FormClosing);
+            this.Load += new System.EventHandler(this.frmTeam_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTeamList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
+            this.bindingNavigator1.ResumeLayout(false);
+            this.bindingNavigator1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamBindingNavigator)).EndInit();
+            this.teamBindingNavigator.ResumeLayout(false);
+            this.teamBindingNavigator.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -528,47 +719,57 @@
         private System.Windows.Forms.ColorDialog cdTeam;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.ToolStripMenuItem miDeleteTeam;
-        private System.Windows.Forms.ToolStripMenuItem miAddTeam;
-        private System.Windows.Forms.ToolStripMenuItem управлениеToolStripMenuItem;
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.OpenFileDialog ofdLogo;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox tbLogo;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox tbTeamNameShort;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox tbTeamCoachTitle;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox tbTeamNationShort;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbTeamNation;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tbTeamName;
-        private System.Windows.Forms.PictureBox pbLogo;
-        private System.Windows.Forms.TextBox tbTeamCoach;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_TTTeam;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn playerFlag;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cbTeamList;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton sbAddPlayer;
-        private System.Windows.Forms.ToolStripButton sbEditPlayer;
-        private System.Windows.Forms.ToolStripButton sbDeletePlayer;
-        private System.Windows.Forms.DataGridView dgvTeamList;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isVisible;
-        private System.Windows.Forms.DataGridViewTextBoxColumn playerName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn playerAge;
-        private System.Windows.Forms.DataGridViewTextBoxColumn playerNation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn playerNationShort;
-        private System.Windows.Forms.DataGridViewTextBoxColumn playerRanking;
-        private System.Windows.Forms.DataGridViewTextBoxColumn playerHand;
+        private databaseDataSet databaseDataSet;
+        private System.Windows.Forms.BindingSource teamBindingSource;
+        private databaseDataSetTableAdapters.TeamTableAdapter teamTableAdapter;
+        private databaseDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.BindingNavigator teamBindingNavigator;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton teamBindingNavigatorSaveItem;
+        private System.Windows.Forms.Button btnColor;
+        private System.Windows.Forms.TextBox clubColorTextBox;
+        private System.Windows.Forms.TextBox clubLogoTextBox;
+        private System.Windows.Forms.TextBox clubCoachTitleTextBox;
+        private System.Windows.Forms.TextBox clubCoachTextBox;
+        private System.Windows.Forms.TextBox clubNameShortTextBox;
+        private System.Windows.Forms.TextBox clubNameTextBox;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private databaseDataSetTableAdapters.PlayerTableAdapter playerTableAdapter;
+        private System.Windows.Forms.BindingSource playerBindingSource;
+        private System.Windows.Forms.DataGridView playerDataGridView;
+        private System.Windows.Forms.Button btnLogo;
+        private System.Windows.Forms.BindingNavigator bindingNavigator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem1;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem1;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator3;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem1;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator4;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem1;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator5;
+        private System.Windows.Forms.ToolStripButton playerBindingNavigatorSaveItem;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
     }
 }
