@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -15,7 +13,7 @@ namespace titleuefafutsal
         public frmTeam()
         {
             InitializeComponent();
-            
+
             /*cbTeamList.DataSource = this.teams;
             cbTeamList.ValueMember = "ID";
             cbTeamList.DisplayMember = "Name";*/
@@ -33,16 +31,6 @@ namespace titleuefafutsal
         {
             /* tempTeam = this.teams.AddNew();
              cbTeamList.SelectedValue = tempTeam.ID;*/
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            /*tempTeam.Name = tbTeamName.Text;
-            tempTeam.NameShort = tbTeamNameShort.Text;
-            tempTeam.Logo = tbLogo.Text;
-            tempTeam.Coach = tbTeamCoach.Text;
-            this.teams.*/
-            //this.teams.Add(tempTeam);
         }
 
         private void teamBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -78,7 +66,7 @@ namespace titleuefafutsal
             }
             else
             {
-                (sender as TextBox).BackColor = (Color)System.Drawing.SystemColors.Window;
+                (sender as TextBox).BackColor = SystemColors.Window;
             }
         }
 
@@ -86,7 +74,8 @@ namespace titleuefafutsal
         {
             if (ofdLogo.ShowDialog() == DialogResult.OK)
             {
-                (sender as TextBox).Text = ofdLogo.FileName;
+                clubLogoTextBox.Text = ofdLogo.FileName;
+                LoadPicture(ofdLogo.FileName);
             }
         }
 
@@ -96,8 +85,8 @@ namespace titleuefafutsal
             tempTeam.Name = ((DataRowView)teamBindingSource.Current).Row["ClubName"].ToString();
             tempTeam.NameShort = ((DataRowView)teamBindingSource.Current).Row["ClubNameShort"].ToString();
 
+            LoadPicture(((DataRowView)teamBindingSource.Current).Row["ClubLogo"].ToString());
             playerBindingSource.Filter = "IDClub = " + tempTeam.ID;
-            
         }
 
         private void playerBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -106,6 +95,23 @@ namespace titleuefafutsal
             this.Validate();
             this.playerBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.databaseDataSet);
+        }
+
+        private void LoadPicture(string picturePath)
+        {
+            try
+            {
+                if (picturePath != string.Empty)
+                    if (System.IO.File.Exists(picturePath))
+                    {
+                        pbClubLogo.ImageLocation = picturePath;
+                        pbClubLogo.Load();
+                    }
+            }
+            catch (Exception e)
+            {
+
+            }
         }
 
         private void frmTeam_FormClosing(object sender, FormClosingEventArgs e)

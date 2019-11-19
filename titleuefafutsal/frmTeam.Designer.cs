@@ -91,6 +91,7 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.teamBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.pbClubLogo = new System.Windows.Forms.PictureBox();
             clubNameLabel = new System.Windows.Forms.Label();
             clubNameShortLabel = new System.Windows.Forms.Label();
             clubCoachLabel = new System.Windows.Forms.Label();
@@ -108,6 +109,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.playerDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamBindingNavigator)).BeginInit();
             this.teamBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbClubLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // clubNameLabel
@@ -184,7 +186,7 @@
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Сохранить";
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.Click += new System.EventHandler(this.teamBindingNavigatorSaveItem_Click);
             // 
             // ofdLogo
             // 
@@ -196,6 +198,7 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.pbClubLogo);
             this.groupBox2.Controls.Add(this.btnLogo);
             this.groupBox2.Controls.Add(this.btnColor);
             this.groupBox2.Controls.Add(clubColorLabel);
@@ -680,6 +683,16 @@
             this.teamBindingNavigatorSaveItem.Text = "Сохранить данные";
             this.teamBindingNavigatorSaveItem.Click += new System.EventHandler(this.teamBindingNavigatorSaveItem_Click);
             // 
+            // pbClubLogo
+            // 
+            this.pbClubLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbClubLogo.Location = new System.Drawing.Point(501, 13);
+            this.pbClubLogo.Name = "pbClubLogo";
+            this.pbClubLogo.Size = new System.Drawing.Size(80, 80);
+            this.pbClubLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbClubLogo.TabIndex = 14;
+            this.pbClubLogo.TabStop = false;
+            // 
             // frmTeam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -709,6 +722,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.teamBindingNavigator)).EndInit();
             this.teamBindingNavigator.ResumeLayout(false);
             this.teamBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbClubLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -771,5 +785,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.PictureBox pbClubLogo;
     }
 }

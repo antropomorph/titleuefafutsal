@@ -9,5 +9,7 @@
         public string ThirdOfficial;
         public string TimeKeeper;
         public bool SemiFinal = false;
+        public string Period = "1st";
+        public string TimePeriod = "HALF TIME";
     }
 }

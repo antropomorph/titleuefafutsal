@@ -30,31 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label clubNameLabel;
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.dgvTeamGuest = new System.Windows.Forms.DataGridView();
-            this.dgcPlayerGuestIsVisible = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dgcPlayerGuestName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgcPlayerGuestAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgcPlayerGuestNation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgcPlayerGuestFlag = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dgcPlayerGuestNationShort = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgcPlayerGuestRanking = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgcPlayerGuestHand = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgcPlayerGuestID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgcPlayerGuestID_TTTeam = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.pbTeamGuestLogo = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            System.Windows.Forms.Label label3;
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.btnMatchSummary = new System.Windows.Forms.Button();
+            this.rbTimeoutClub2 = new System.Windows.Forms.RadioButton();
+            this.rbTimeoutClub1 = new System.Windows.Forms.RadioButton();
             this.cbSemiFinal = new System.Windows.Forms.CheckBox();
             this.btnKillAll = new System.Windows.Forms.Button();
             this.rbPlayerGuest = new System.Windows.Forms.RadioButton();
-            this.rbTeamsResult = new System.Windows.Forms.RadioButton();
+            this.rbBallPossession = new System.Windows.Forms.RadioButton();
             this.rbPlayerHome = new System.Windows.Forms.RadioButton();
             this.rbClearGraphics = new System.Windows.Forms.RadioButton();
             this.rbOfficials = new System.Windows.Forms.RadioButton();
@@ -65,22 +50,35 @@
             this.rbScoreBig = new System.Windows.Forms.RadioButton();
             this.rbEventTitle = new System.Windows.Forms.RadioButton();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.tbTimePeriod = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tbPeriod = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvClub1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcClub1PlayerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcClub1PlayerSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcClub1PlayerNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcClub1PlayerRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.playerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.playerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.databaseDataSet = new titleuefafutsal.databaseDataSet();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.tbCoach = new System.Windows.Forms.TextBox();
-            this.teamBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbCoach1 = new System.Windows.Forms.TextBox();
+            this.teamBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.cbClub1 = new System.Windows.Forms.ComboBox();
             this.pbTeamHomeLogo = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -90,26 +88,56 @@
             this.startXPressionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teamsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.teamTableAdapter = new titleuefafutsal.databaseDataSetTableAdapters.TeamTableAdapter();
+            this.teamTableAdapter1 = new titleuefafutsal.databaseDataSetTableAdapters.TeamTableAdapter();
             this.tableAdapterManager = new titleuefafutsal.databaseDataSetTableAdapters.TableAdapterManager();
-            this.playerTableAdapter = new titleuefafutsal.databaseDataSetTableAdapters.PlayerTableAdapter();
+            this.playerTableAdapter1 = new titleuefafutsal.databaseDataSetTableAdapters.PlayerTableAdapter();
+            this.tbLog = new System.Windows.Forms.TextBox();
+            this.rbUpScore = new System.Windows.Forms.RadioButton();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.dgvClub2 = new System.Windows.Forms.DataGridView();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.tbCoach2 = new System.Windows.Forms.TextBox();
+            this.cbClub2 = new System.Windows.Forms.ComboBox();
+            this.pbTeamGuestLogo = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.playerTableAdapter2 = new titleuefafutsal.databaseDataSetTableAdapters.PlayerTableAdapter();
+            this.playerBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.teamBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.teamTableAdapter2 = new titleuefafutsal.databaseDataSetTableAdapters.TeamTableAdapter();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcClub2PlayerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcClub2PlayerSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcClub2PlayerNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcClub2PlayerRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             clubNameLabel = new System.Windows.Forms.Label();
-            this.groupBox5.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTeamGuest)).BeginInit();
-            this.groupBox10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTeamGuestLogo)).BeginInit();
+            label3 = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             this.groupBox8.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClub1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTeamHomeLogo)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClub2)).BeginInit();
+            this.groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTeamGuestLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // clubNameLabel
@@ -121,194 +149,15 @@
             clubNameLabel.TabIndex = 4;
             clubNameLabel.Text = "Название:";
             // 
-            // groupBox5
-            // 
-            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox5.Controls.Add(this.groupBox9);
-            this.groupBox5.Controls.Add(this.groupBox10);
-            this.groupBox5.Location = new System.Drawing.Point(854, 62);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(366, 535);
-            this.groupBox5.TabIndex = 6;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Команда";
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox9.Controls.Add(this.dgvTeamGuest);
-            this.groupBox9.Location = new System.Drawing.Point(6, 105);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(349, 424);
-            this.groupBox9.TabIndex = 1;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Состав";
-            // 
-            // dgvTeamGuest
-            // 
-            this.dgvTeamGuest.AllowUserToAddRows = false;
-            this.dgvTeamGuest.AllowUserToDeleteRows = false;
-            this.dgvTeamGuest.AllowUserToResizeRows = false;
-            this.dgvTeamGuest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTeamGuest.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgcPlayerGuestIsVisible,
-            this.dgcPlayerGuestName,
-            this.dgcPlayerGuestAge,
-            this.dgcPlayerGuestNation,
-            this.dgcPlayerGuestFlag,
-            this.dgcPlayerGuestNationShort,
-            this.dgcPlayerGuestRanking,
-            this.dgcPlayerGuestHand,
-            this.dgcPlayerGuestID,
-            this.dgcPlayerGuestID_TTTeam});
-            this.dgvTeamGuest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTeamGuest.Location = new System.Drawing.Point(3, 16);
-            this.dgvTeamGuest.MultiSelect = false;
-            this.dgvTeamGuest.Name = "dgvTeamGuest";
-            this.dgvTeamGuest.ReadOnly = true;
-            this.dgvTeamGuest.RowHeadersVisible = false;
-            this.dgvTeamGuest.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTeamGuest.ShowEditingIcon = false;
-            this.dgvTeamGuest.Size = new System.Drawing.Size(343, 405);
-            this.dgvTeamGuest.TabIndex = 1;
-            // 
-            // dgcPlayerGuestIsVisible
-            // 
-            this.dgcPlayerGuestIsVisible.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgcPlayerGuestIsVisible.DataPropertyName = "IsVisible";
-            this.dgcPlayerGuestIsVisible.FillWeight = 101.5228F;
-            this.dgcPlayerGuestIsVisible.HeaderText = "Видим";
-            this.dgcPlayerGuestIsVisible.Name = "dgcPlayerGuestIsVisible";
-            this.dgcPlayerGuestIsVisible.ReadOnly = true;
-            // 
-            // dgcPlayerGuestName
-            // 
-            this.dgcPlayerGuestName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgcPlayerGuestName.DataPropertyName = "PlayerName";
-            this.dgcPlayerGuestName.FillWeight = 99.49239F;
-            this.dgcPlayerGuestName.HeaderText = "Имя";
-            this.dgcPlayerGuestName.Name = "dgcPlayerGuestName";
-            this.dgcPlayerGuestName.ReadOnly = true;
-            // 
-            // dgcPlayerGuestAge
-            // 
-            this.dgcPlayerGuestAge.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgcPlayerGuestAge.DataPropertyName = "PlayerAge";
-            this.dgcPlayerGuestAge.FillWeight = 99.49239F;
-            this.dgcPlayerGuestAge.HeaderText = "Возраст";
-            this.dgcPlayerGuestAge.Name = "dgcPlayerGuestAge";
-            this.dgcPlayerGuestAge.ReadOnly = true;
-            // 
-            // dgcPlayerGuestNation
-            // 
-            this.dgcPlayerGuestNation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgcPlayerGuestNation.DataPropertyName = "PlayerNation";
-            this.dgcPlayerGuestNation.FillWeight = 99.49239F;
-            this.dgcPlayerGuestNation.HeaderText = "Национальность";
-            this.dgcPlayerGuestNation.Name = "dgcPlayerGuestNation";
-            this.dgcPlayerGuestNation.ReadOnly = true;
-            // 
-            // dgcPlayerGuestFlag
-            // 
-            this.dgcPlayerGuestFlag.DataPropertyName = "PlayerFlag";
-            this.dgcPlayerGuestFlag.HeaderText = "Флаг";
-            this.dgcPlayerGuestFlag.Name = "dgcPlayerGuestFlag";
-            this.dgcPlayerGuestFlag.ReadOnly = true;
-            this.dgcPlayerGuestFlag.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgcPlayerGuestFlag.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dgcPlayerGuestFlag.Visible = false;
-            this.dgcPlayerGuestFlag.Width = 142;
-            // 
-            // dgcPlayerGuestNationShort
-            // 
-            this.dgcPlayerGuestNationShort.DataPropertyName = "PlayerNationShort";
-            this.dgcPlayerGuestNationShort.HeaderText = "PlayerNationShort";
-            this.dgcPlayerGuestNationShort.Name = "dgcPlayerGuestNationShort";
-            this.dgcPlayerGuestNationShort.ReadOnly = true;
-            this.dgcPlayerGuestNationShort.Visible = false;
-            // 
-            // dgcPlayerGuestRanking
-            // 
-            this.dgcPlayerGuestRanking.DataPropertyName = "PlayerRanking";
-            this.dgcPlayerGuestRanking.HeaderText = "PlayerRanking";
-            this.dgcPlayerGuestRanking.Name = "dgcPlayerGuestRanking";
-            this.dgcPlayerGuestRanking.ReadOnly = true;
-            this.dgcPlayerGuestRanking.Visible = false;
-            // 
-            // dgcPlayerGuestHand
-            // 
-            this.dgcPlayerGuestHand.DataPropertyName = "PlayerHand";
-            this.dgcPlayerGuestHand.HeaderText = "PlayerHand";
-            this.dgcPlayerGuestHand.Name = "dgcPlayerGuestHand";
-            this.dgcPlayerGuestHand.ReadOnly = true;
-            this.dgcPlayerGuestHand.Visible = false;
-            // 
-            // dgcPlayerGuestID
-            // 
-            this.dgcPlayerGuestID.DataPropertyName = "ID";
-            this.dgcPlayerGuestID.HeaderText = "ID";
-            this.dgcPlayerGuestID.Name = "dgcPlayerGuestID";
-            this.dgcPlayerGuestID.ReadOnly = true;
-            this.dgcPlayerGuestID.Visible = false;
-            // 
-            // dgcPlayerGuestID_TTTeam
-            // 
-            this.dgcPlayerGuestID_TTTeam.DataPropertyName = "ID_TTTeam";
-            this.dgcPlayerGuestID_TTTeam.HeaderText = "ID_TTTeam";
-            this.dgcPlayerGuestID_TTTeam.Name = "dgcPlayerGuestID_TTTeam";
-            this.dgcPlayerGuestID_TTTeam.ReadOnly = true;
-            this.dgcPlayerGuestID_TTTeam.Visible = false;
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.pbTeamGuestLogo);
-            this.groupBox10.Controls.Add(this.label3);
-            this.groupBox10.Controls.Add(this.label4);
-            this.groupBox10.Location = new System.Drawing.Point(6, 19);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(360, 86);
-            this.groupBox10.TabIndex = 0;
-            this.groupBox10.TabStop = false;
-            // 
-            // pbTeamGuestLogo
-            // 
-            this.pbTeamGuestLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbTeamGuestLogo.Location = new System.Drawing.Point(293, 19);
-            this.pbTeamGuestLogo.Name = "pbTeamGuestLogo";
-            this.pbTeamGuestLogo.Size = new System.Drawing.Size(47, 47);
-            this.pbTeamGuestLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbTeamGuestLogo.TabIndex = 4;
-            this.pbTeamGuestLogo.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 49);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Тренер:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 22);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Название:";
-            // 
             // groupBox4
             // 
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox4.Controls.Add(this.groupBox8);
             this.groupBox4.Controls.Add(this.groupBox7);
-            this.groupBox4.Location = new System.Drawing.Point(371, 62);
+            this.groupBox4.Location = new System.Drawing.Point(371, 32);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(477, 535);
+            this.groupBox4.Size = new System.Drawing.Size(477, 653);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Управление графикой";
@@ -317,12 +166,14 @@
             // 
             this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox8.Controls.Add(this.radioButton1);
-            this.groupBox8.Controls.Add(this.radioButton2);
+            this.groupBox8.Controls.Add(this.rbUpScore);
+            this.groupBox8.Controls.Add(this.btnMatchSummary);
+            this.groupBox8.Controls.Add(this.rbTimeoutClub2);
+            this.groupBox8.Controls.Add(this.rbTimeoutClub1);
             this.groupBox8.Controls.Add(this.cbSemiFinal);
             this.groupBox8.Controls.Add(this.btnKillAll);
             this.groupBox8.Controls.Add(this.rbPlayerGuest);
-            this.groupBox8.Controls.Add(this.rbTeamsResult);
+            this.groupBox8.Controls.Add(this.rbBallPossession);
             this.groupBox8.Controls.Add(this.rbPlayerHome);
             this.groupBox8.Controls.Add(this.rbClearGraphics);
             this.groupBox8.Controls.Add(this.rbOfficials);
@@ -332,40 +183,52 @@
             this.groupBox8.Controls.Add(this.rbCoachHome);
             this.groupBox8.Controls.Add(this.rbScoreBig);
             this.groupBox8.Controls.Add(this.rbEventTitle);
-            this.groupBox8.Location = new System.Drawing.Point(6, 121);
+            this.groupBox8.Location = new System.Drawing.Point(6, 145);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(465, 408);
+            this.groupBox8.Size = new System.Drawing.Size(465, 502);
             this.groupBox8.TabIndex = 3;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Титры";
             // 
-            // radioButton1
+            // btnMatchSummary
             // 
-            this.radioButton1.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton1.FlatAppearance.BorderSize = 2;
-            this.radioButton1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Green;
-            this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton1.Location = new System.Drawing.Point(244, 199);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(215, 30);
-            this.radioButton1.TabIndex = 18;
-            this.radioButton1.Text = "Таймаут";
-            this.radioButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.btnMatchSummary.Location = new System.Drawing.Point(244, 235);
+            this.btnMatchSummary.Name = "btnMatchSummary";
+            this.btnMatchSummary.Size = new System.Drawing.Size(215, 30);
+            this.btnMatchSummary.TabIndex = 19;
+            this.btnMatchSummary.Text = "Статистика";
+            this.btnMatchSummary.UseVisualStyleBackColor = true;
+            this.btnMatchSummary.Click += new System.EventHandler(this.btnMatchSummary_Click);
             // 
-            // radioButton2
+            // rbTimeoutClub2
             // 
-            this.radioButton2.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton2.FlatAppearance.BorderSize = 2;
-            this.radioButton2.FlatAppearance.CheckedBackColor = System.Drawing.Color.Green;
-            this.radioButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton2.Location = new System.Drawing.Point(6, 199);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(212, 30);
-            this.radioButton2.TabIndex = 17;
-            this.radioButton2.Text = "Таймаут";
-            this.radioButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbTimeoutClub2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbTimeoutClub2.FlatAppearance.BorderSize = 2;
+            this.rbTimeoutClub2.FlatAppearance.CheckedBackColor = System.Drawing.Color.Green;
+            this.rbTimeoutClub2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbTimeoutClub2.Location = new System.Drawing.Point(244, 163);
+            this.rbTimeoutClub2.Name = "rbTimeoutClub2";
+            this.rbTimeoutClub2.Size = new System.Drawing.Size(215, 30);
+            this.rbTimeoutClub2.TabIndex = 18;
+            this.rbTimeoutClub2.Text = "Таймаут";
+            this.rbTimeoutClub2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbTimeoutClub2.UseVisualStyleBackColor = true;
+            this.rbTimeoutClub2.CheckedChanged += new System.EventHandler(this.rbTimeoutClub2_CheckedChanged);
+            // 
+            // rbTimeoutClub1
+            // 
+            this.rbTimeoutClub1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbTimeoutClub1.FlatAppearance.BorderSize = 2;
+            this.rbTimeoutClub1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Green;
+            this.rbTimeoutClub1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbTimeoutClub1.Location = new System.Drawing.Point(6, 163);
+            this.rbTimeoutClub1.Name = "rbTimeoutClub1";
+            this.rbTimeoutClub1.Size = new System.Drawing.Size(212, 30);
+            this.rbTimeoutClub1.TabIndex = 17;
+            this.rbTimeoutClub1.Text = "Таймаут";
+            this.rbTimeoutClub1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbTimeoutClub1.UseVisualStyleBackColor = true;
+            this.rbTimeoutClub1.CheckedChanged += new System.EventHandler(this.rbTimeoutClub1_CheckedChanged);
             // 
             // cbSemiFinal
             // 
@@ -401,20 +264,22 @@
             this.rbPlayerGuest.Text = "Игрок";
             this.rbPlayerGuest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbPlayerGuest.UseVisualStyleBackColor = true;
+            this.rbPlayerGuest.CheckedChanged += new System.EventHandler(this.rbPlayerGuest_CheckedChanged);
             // 
-            // rbTeamsResult
+            // rbBallPossession
             // 
-            this.rbTeamsResult.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbTeamsResult.FlatAppearance.BorderSize = 2;
-            this.rbTeamsResult.FlatAppearance.CheckedBackColor = System.Drawing.Color.Green;
-            this.rbTeamsResult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbTeamsResult.Location = new System.Drawing.Point(244, 163);
-            this.rbTeamsResult.Name = "rbTeamsResult";
-            this.rbTeamsResult.Size = new System.Drawing.Size(215, 30);
-            this.rbTeamsResult.TabIndex = 13;
-            this.rbTeamsResult.Text = "10_Результат команды";
-            this.rbTeamsResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rbTeamsResult.UseVisualStyleBackColor = true;
+            this.rbBallPossession.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbBallPossession.FlatAppearance.BorderSize = 2;
+            this.rbBallPossession.FlatAppearance.CheckedBackColor = System.Drawing.Color.Green;
+            this.rbBallPossession.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbBallPossession.Location = new System.Drawing.Point(244, 199);
+            this.rbBallPossession.Name = "rbBallPossession";
+            this.rbBallPossession.Size = new System.Drawing.Size(215, 30);
+            this.rbBallPossession.TabIndex = 13;
+            this.rbBallPossession.Text = "Владение мячом";
+            this.rbBallPossession.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbBallPossession.UseVisualStyleBackColor = true;
+            this.rbBallPossession.CheckedChanged += new System.EventHandler(this.rbBallPossession_CheckedChanged);
             // 
             // rbPlayerHome
             // 
@@ -429,6 +294,7 @@
             this.rbPlayerHome.Text = "Игрок";
             this.rbPlayerHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbPlayerHome.UseVisualStyleBackColor = true;
+            this.rbPlayerHome.CheckedChanged += new System.EventHandler(this.rbPlayerHome_CheckedChanged);
             // 
             // rbClearGraphics
             // 
@@ -441,10 +307,10 @@
             this.rbClearGraphics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbClearGraphics.Location = new System.Drawing.Point(6, 355);
             this.rbClearGraphics.Name = "rbClearGraphics";
-            this.rbClearGraphics.Size = new System.Drawing.Size(453, 47);
+            this.rbClearGraphics.Size = new System.Drawing.Size(453, 141);
             this.rbClearGraphics.TabIndex = 10;
             this.rbClearGraphics.TabStop = true;
-            this.rbClearGraphics.Text = "Убрать графику";
+            this.rbClearGraphics.Text = "Убрать графику [F4]";
             this.rbClearGraphics.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbClearGraphics.UseVisualStyleBackColor = true;
             this.rbClearGraphics.CheckedChanged += new System.EventHandler(this.rbClearGraphics_CheckedChanged);
@@ -455,7 +321,7 @@
             this.rbOfficials.FlatAppearance.BorderSize = 2;
             this.rbOfficials.FlatAppearance.CheckedBackColor = System.Drawing.Color.Green;
             this.rbOfficials.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbOfficials.Location = new System.Drawing.Point(6, 163);
+            this.rbOfficials.Location = new System.Drawing.Point(6, 199);
             this.rbOfficials.Name = "rbOfficials";
             this.rbOfficials.Size = new System.Drawing.Size(212, 30);
             this.rbOfficials.TabIndex = 8;
@@ -477,6 +343,7 @@
             this.rbTeamGuest.Text = "Команда";
             this.rbTeamGuest.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rbTeamGuest.UseVisualStyleBackColor = true;
+            this.rbTeamGuest.CheckedChanged += new System.EventHandler(this.rbTeamGuest_CheckedChanged);
             // 
             // rbTeamHome
             // 
@@ -505,6 +372,7 @@
             this.rbCoachGuest.Text = "Тренер";
             this.rbCoachGuest.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rbCoachGuest.UseVisualStyleBackColor = true;
+            this.rbCoachGuest.CheckedChanged += new System.EventHandler(this.rbCoachGuest_CheckedChanged);
             // 
             // rbCoachHome
             // 
@@ -518,6 +386,7 @@
             this.rbCoachHome.TabIndex = 3;
             this.rbCoachHome.Text = "Тренер";
             this.rbCoachHome.UseVisualStyleBackColor = true;
+            this.rbCoachHome.CheckedChanged += new System.EventHandler(this.rbCoachHome_CheckedChanged);
             // 
             // rbScoreBig
             // 
@@ -527,7 +396,7 @@
             this.rbScoreBig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbScoreBig.Location = new System.Drawing.Point(6, 235);
             this.rbScoreBig.Name = "rbScoreBig";
-            this.rbScoreBig.Size = new System.Drawing.Size(453, 30);
+            this.rbScoreBig.Size = new System.Drawing.Size(212, 30);
             this.rbScoreBig.TabIndex = 2;
             this.rbScoreBig.Text = "Большой счет";
             this.rbScoreBig.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -551,12 +420,151 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.tbTimePeriod);
+            this.groupBox7.Controls.Add(this.textBox1);
+            this.groupBox7.Controls.Add(this.label9);
+            this.groupBox7.Controls.Add(this.tbPeriod);
+            this.groupBox7.Controls.Add(this.label8);
+            this.groupBox7.Controls.Add(this.label5);
+            this.groupBox7.Controls.Add(this.numericUpDown2);
+            this.groupBox7.Controls.Add(this.label7);
+            this.groupBox7.Controls.Add(this.numericUpDown4);
+            this.groupBox7.Controls.Add(this.label6);
+            this.groupBox7.Controls.Add(this.numericUpDown3);
+            this.groupBox7.Controls.Add(this.label1);
+            this.groupBox7.Controls.Add(this.numericUpDown1);
             this.groupBox7.Location = new System.Drawing.Point(6, 19);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(465, 80);
+            this.groupBox7.Size = new System.Drawing.Size(465, 120);
             this.groupBox7.TabIndex = 2;
             this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Игроки";
+            this.groupBox7.Text = "Игра";
+            // 
+            // tbTimePeriod
+            // 
+            this.tbTimePeriod.Location = new System.Drawing.Point(142, 37);
+            this.tbTimePeriod.Name = "tbTimePeriod";
+            this.tbTimePeriod.Size = new System.Drawing.Size(76, 20);
+            this.tbTimePeriod.TabIndex = 14;
+            this.tbTimePeriod.Text = "HALF TIME";
+            this.tbTimePeriod.Validated += new System.EventHandler(this.tbTimePeriod_Validated);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(244, 37);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(79, 20);
+            this.textBox1.TabIndex = 13;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(241, 17);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(43, 13);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Время:";
+            // 
+            // tbPeriod
+            // 
+            this.tbPeriod.Location = new System.Drawing.Point(103, 37);
+            this.tbPeriod.Name = "tbPeriod";
+            this.tbPeriod.Size = new System.Drawing.Size(33, 20);
+            this.tbPeriod.TabIndex = 11;
+            this.tbPeriod.Text = "1st";
+            this.tbPeriod.TextChanged += new System.EventHandler(this.tbPeriod_TextChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(100, 16);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 13);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Период:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(403, 73);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(41, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Фолы:";
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numericUpDown2.Location = new System.Drawing.Point(406, 89);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(53, 22);
+            this.numericUpDown2.TabIndex = 8;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(403, 16);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(36, 13);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Голы:";
+            // 
+            // numericUpDown4
+            // 
+            this.numericUpDown4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numericUpDown4.InterceptArrowKeys = false;
+            this.numericUpDown4.Location = new System.Drawing.Point(406, 35);
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(53, 35);
+            this.numericUpDown4.TabIndex = 6;
+            this.numericUpDown4.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDown4.ValueChanged += new System.EventHandler(this.numericUpDown4_ValueChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(14, 73);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 13);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Фолы:";
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numericUpDown3.Location = new System.Drawing.Point(17, 89);
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(53, 22);
+            this.numericUpDown3.TabIndex = 4;
+            this.numericUpDown3.ValueChanged += new System.EventHandler(this.numericUpDown3_ValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Голы:";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numericUpDown1.InterceptArrowKeys = false;
+            this.numericUpDown1.Location = new System.Drawing.Point(17, 35);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(53, 35);
+            this.numericUpDown1.TabIndex = 0;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // groupBox1
             // 
@@ -564,9 +572,9 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Location = new System.Drawing.Point(3, 62);
+            this.groupBox1.Location = new System.Drawing.Point(3, 32);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(362, 535);
+            this.groupBox1.Size = new System.Drawing.Size(362, 424);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Команда";
@@ -578,7 +586,7 @@
             this.groupBox3.Controls.Add(this.dgvClub1);
             this.groupBox3.Location = new System.Drawing.Point(6, 103);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(350, 423);
+            this.groupBox3.Size = new System.Drawing.Size(350, 315);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Состав";
@@ -594,13 +602,13 @@
             this.dgvClub1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
+            this.dgcClub1PlayerName,
+            this.dgcClub1PlayerSurname,
+            this.dgcClub1PlayerNumber,
+            this.dgcClub1PlayerRole,
             this.dataGridViewCheckBoxColumn1,
             this.dataGridViewTextBoxColumn7});
-            this.dgvClub1.DataSource = this.playerBindingSource;
+            this.dgvClub1.DataSource = this.playerBindingSource1;
             this.dgvClub1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvClub1.Location = new System.Drawing.Point(9, 19);
             this.dgvClub1.Name = "dgvClub1";
@@ -608,7 +616,7 @@
             this.dgvClub1.RowHeadersVisible = false;
             this.dgvClub1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClub1.ShowEditingIcon = false;
-            this.dgvClub1.Size = new System.Drawing.Size(331, 398);
+            this.dgvClub1.Size = new System.Drawing.Size(331, 288);
             this.dgvClub1.TabIndex = 0;
             this.dgvClub1.SelectionChanged += new System.EventHandler(this.dgvClub1_SelectionChanged);
             // 
@@ -619,6 +627,7 @@
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Visible = false;
+            this.dataGridViewTextBoxColumn1.Width = 72;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -628,37 +637,37 @@
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.Width = 98;
             // 
-            // dataGridViewTextBoxColumn2
+            // dgcClub1PlayerName
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "PlayerName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "PlayerName";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 89;
+            this.dgcClub1PlayerName.DataPropertyName = "PlayerName";
+            this.dgcClub1PlayerName.HeaderText = "PlayerName";
+            this.dgcClub1PlayerName.Name = "dgcClub1PlayerName";
+            this.dgcClub1PlayerName.ReadOnly = true;
+            this.dgcClub1PlayerName.Width = 89;
             // 
-            // dataGridViewTextBoxColumn3
+            // dgcClub1PlayerSurname
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "PlayerSurname";
-            this.dataGridViewTextBoxColumn3.HeaderText = "PlayerSurname";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 103;
+            this.dgcClub1PlayerSurname.DataPropertyName = "PlayerSurname";
+            this.dgcClub1PlayerSurname.HeaderText = "PlayerSurname";
+            this.dgcClub1PlayerSurname.Name = "dgcClub1PlayerSurname";
+            this.dgcClub1PlayerSurname.ReadOnly = true;
+            this.dgcClub1PlayerSurname.Width = 103;
             // 
-            // dataGridViewTextBoxColumn4
+            // dgcClub1PlayerNumber
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "PlayerNumber";
-            this.dataGridViewTextBoxColumn4.HeaderText = "PlayerNumber";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 98;
+            this.dgcClub1PlayerNumber.DataPropertyName = "PlayerNumber";
+            this.dgcClub1PlayerNumber.HeaderText = "PlayerNumber";
+            this.dgcClub1PlayerNumber.Name = "dgcClub1PlayerNumber";
+            this.dgcClub1PlayerNumber.ReadOnly = true;
+            this.dgcClub1PlayerNumber.Width = 98;
             // 
-            // dataGridViewTextBoxColumn5
+            // dgcClub1PlayerRole
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "PlayerRole";
-            this.dataGridViewTextBoxColumn5.HeaderText = "PlayerRole";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 83;
+            this.dgcClub1PlayerRole.DataPropertyName = "PlayerRole";
+            this.dgcClub1PlayerRole.HeaderText = "PlayerRole";
+            this.dgcClub1PlayerRole.Name = "dgcClub1PlayerRole";
+            this.dgcClub1PlayerRole.ReadOnly = true;
+            this.dgcClub1PlayerRole.Width = 83;
             // 
             // dataGridViewCheckBoxColumn1
             // 
@@ -667,6 +676,7 @@
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             this.dataGridViewCheckBoxColumn1.Visible = false;
+            this.dataGridViewCheckBoxColumn1.Width = 51;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -675,11 +685,12 @@
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             this.dataGridViewTextBoxColumn7.Visible = false;
+            this.dataGridViewTextBoxColumn7.Width = 64;
             // 
-            // playerBindingSource
+            // playerBindingSource1
             // 
-            this.playerBindingSource.DataMember = "Player";
-            this.playerBindingSource.DataSource = this.databaseDataSet;
+            this.playerBindingSource1.DataMember = "Player";
+            this.playerBindingSource1.DataSource = this.databaseDataSet;
             // 
             // databaseDataSet
             // 
@@ -688,7 +699,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.tbCoach);
+            this.groupBox2.Controls.Add(this.tbCoach1);
             this.groupBox2.Controls.Add(this.cbClub1);
             this.groupBox2.Controls.Add(clubNameLabel);
             this.groupBox2.Controls.Add(this.pbTeamHomeLogo);
@@ -699,23 +710,23 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             // 
-            // tbCoach
+            // tbCoach1
             // 
-            this.tbCoach.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.teamBindingSource, "ClubCoach", true));
-            this.tbCoach.Location = new System.Drawing.Point(72, 46);
-            this.tbCoach.Name = "tbCoach";
-            this.tbCoach.ReadOnly = true;
-            this.tbCoach.Size = new System.Drawing.Size(215, 20);
-            this.tbCoach.TabIndex = 6;
+            this.tbCoach1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.teamBindingSource1, "ClubCoach", true));
+            this.tbCoach1.Location = new System.Drawing.Point(72, 46);
+            this.tbCoach1.Name = "tbCoach1";
+            this.tbCoach1.ReadOnly = true;
+            this.tbCoach1.Size = new System.Drawing.Size(215, 20);
+            this.tbCoach1.TabIndex = 6;
             // 
-            // teamBindingSource
+            // teamBindingSource1
             // 
-            this.teamBindingSource.DataMember = "Team";
-            this.teamBindingSource.DataSource = this.databaseDataSet;
+            this.teamBindingSource1.DataMember = "Team";
+            this.teamBindingSource1.DataSource = this.databaseDataSet;
             // 
             // cbClub1
             // 
-            this.cbClub1.DataSource = this.teamBindingSource;
+            this.cbClub1.DataSource = this.teamBindingSource1;
             this.cbClub1.DisplayMember = "ClubName";
             this.cbClub1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbClub1.FormattingEnabled = true;
@@ -724,7 +735,6 @@
             this.cbClub1.Size = new System.Drawing.Size(215, 21);
             this.cbClub1.TabIndex = 5;
             this.cbClub1.ValueMember = "IDClub";
-            this.cbClub1.SelectionChangeCommitted += new System.EventHandler(this.cbClub1_SelectionChangeCommitted);
             this.cbClub1.SelectedValueChanged += new System.EventHandler(this.cbClub1_SelectedValueChanged);
             // 
             // pbTeamHomeLogo
@@ -757,7 +767,7 @@
             this.teamsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1298, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1231, 24);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -791,84 +801,303 @@
             this.teamsToolStripMenuItem.Text = "Команды";
             this.teamsToolStripMenuItem.Click += new System.EventHandler(this.teamsToolStripMenuItem_Click);
             // 
-            // teamTableAdapter
+            // teamTableAdapter1
             // 
-            this.teamTableAdapter.ClearBeforeFill = true;
+            this.teamTableAdapter1.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.PlayerTableAdapter = this.playerTableAdapter;
-            this.tableAdapterManager.TeamTableAdapter = this.teamTableAdapter;
+            this.tableAdapterManager.PlayerTableAdapter = this.playerTableAdapter1;
+            this.tableAdapterManager.TeamTableAdapter = this.teamTableAdapter1;
             this.tableAdapterManager.UpdateOrder = titleuefafutsal.databaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // playerTableAdapter
+            // playerTableAdapter1
             // 
-            this.playerTableAdapter.ClearBeforeFill = true;
+            this.playerTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tbLog
+            // 
+            this.tbLog.Location = new System.Drawing.Point(854, 596);
+            this.tbLog.Multiline = true;
+            this.tbLog.Name = "tbLog";
+            this.tbLog.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.tbLog.Size = new System.Drawing.Size(366, 119);
+            this.tbLog.TabIndex = 9;
+            // 
+            // rbUpScore
+            // 
+            this.rbUpScore.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbUpScore.FlatAppearance.BorderSize = 2;
+            this.rbUpScore.FlatAppearance.CheckedBackColor = System.Drawing.Color.Green;
+            this.rbUpScore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbUpScore.Location = new System.Drawing.Point(6, 271);
+            this.rbUpScore.Name = "rbUpScore";
+            this.rbUpScore.Size = new System.Drawing.Size(212, 30);
+            this.rbUpScore.TabIndex = 20;
+            this.rbUpScore.Text = "Верхний счет [F5]";
+            this.rbUpScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbUpScore.UseVisualStyleBackColor = true;
+            this.rbUpScore.CheckedChanged += new System.EventHandler(this.rbUpScore_CheckedChanged);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox5.Controls.Add(this.groupBox6);
+            this.groupBox5.Controls.Add(this.groupBox9);
+            this.groupBox5.Location = new System.Drawing.Point(858, 32);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(362, 424);
+            this.groupBox5.TabIndex = 10;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Команда";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox6.Controls.Add(this.dgvClub2);
+            this.groupBox6.Location = new System.Drawing.Point(6, 103);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(350, 315);
+            this.groupBox6.TabIndex = 1;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Состав";
+            // 
+            // dgvClub2
+            // 
+            this.dgvClub2.AllowUserToAddRows = false;
+            this.dgvClub2.AllowUserToDeleteRows = false;
+            this.dgvClub2.AllowUserToResizeColumns = false;
+            this.dgvClub2.AllowUserToResizeRows = false;
+            this.dgvClub2.AutoGenerateColumns = false;
+            this.dgvClub2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvClub2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dgcClub2PlayerName,
+            this.dgcClub2PlayerSurname,
+            this.dgcClub2PlayerNumber,
+            this.dgcClub2PlayerRole,
+            this.dataGridViewCheckBoxColumn2,
+            this.dataGridViewTextBoxColumn10});
+            this.dgvClub2.DataSource = this.playerBindingSource2;
+            this.dgvClub2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvClub2.Location = new System.Drawing.Point(9, 19);
+            this.dgvClub2.Name = "dgvClub2";
+            this.dgvClub2.ReadOnly = true;
+            this.dgvClub2.RowHeadersVisible = false;
+            this.dgvClub2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvClub2.ShowEditingIcon = false;
+            this.dgvClub2.Size = new System.Drawing.Size(331, 288);
+            this.dgvClub2.TabIndex = 0;
+            this.dgvClub2.SelectionChanged += new System.EventHandler(this.dgvClub2_SelectionChanged);
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.tbCoach2);
+            this.groupBox9.Controls.Add(this.cbClub2);
+            this.groupBox9.Controls.Add(label3);
+            this.groupBox9.Controls.Add(this.pbTeamGuestLogo);
+            this.groupBox9.Controls.Add(this.label4);
+            this.groupBox9.Location = new System.Drawing.Point(6, 14);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(350, 88);
+            this.groupBox9.TabIndex = 0;
+            this.groupBox9.TabStop = false;
+            // 
+            // tbCoach2
+            // 
+            this.tbCoach2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.teamBindingSource2, "ClubCoach", true));
+            this.tbCoach2.Location = new System.Drawing.Point(72, 46);
+            this.tbCoach2.Name = "tbCoach2";
+            this.tbCoach2.ReadOnly = true;
+            this.tbCoach2.Size = new System.Drawing.Size(215, 20);
+            this.tbCoach2.TabIndex = 6;
+            // 
+            // cbClub2
+            // 
+            this.cbClub2.DataSource = this.teamBindingSource2;
+            this.cbClub2.DisplayMember = "ClubName";
+            this.cbClub2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbClub2.FormattingEnabled = true;
+            this.cbClub2.Location = new System.Drawing.Point(72, 19);
+            this.cbClub2.Name = "cbClub2";
+            this.cbClub2.Size = new System.Drawing.Size(215, 21);
+            this.cbClub2.TabIndex = 5;
+            this.cbClub2.ValueMember = "IDClub";
+            this.cbClub2.SelectedValueChanged += new System.EventHandler(this.cbClub2_SelectedValueChanged);
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(6, 22);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(60, 13);
+            label3.TabIndex = 4;
+            label3.Text = "Название:";
+            // 
+            // pbTeamGuestLogo
+            // 
+            this.pbTeamGuestLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbTeamGuestLogo.Location = new System.Drawing.Point(293, 19);
+            this.pbTeamGuestLogo.Name = "pbTeamGuestLogo";
+            this.pbTeamGuestLogo.Size = new System.Drawing.Size(47, 47);
+            this.pbTeamGuestLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbTeamGuestLogo.TabIndex = 4;
+            this.pbTeamGuestLogo.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Тренер:";
+            // 
+            // playerTableAdapter2
+            // 
+            this.playerTableAdapter2.ClearBeforeFill = true;
+            // 
+            // playerBindingSource2
+            // 
+            this.playerBindingSource2.DataMember = "Player";
+            this.playerBindingSource2.DataSource = this.databaseDataSet;
+            // 
+            // teamBindingSource2
+            // 
+            this.teamBindingSource2.DataMember = "Team";
+            this.teamBindingSource2.DataSource = this.databaseDataSet;
+            // 
+            // teamTableAdapter2
+            // 
+            this.teamTableAdapter2.ClearBeforeFill = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "IDPlayer";
+            this.dataGridViewTextBoxColumn2.HeaderText = "IDPlayer";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            this.dataGridViewTextBoxColumn2.Width = 72;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "PlayerPosition";
+            this.dataGridViewTextBoxColumn3.HeaderText = "PlayerPosition";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 98;
+            // 
+            // dgcClub2PlayerName
+            // 
+            this.dgcClub2PlayerName.DataPropertyName = "PlayerName";
+            this.dgcClub2PlayerName.HeaderText = "PlayerName";
+            this.dgcClub2PlayerName.Name = "dgcClub2PlayerName";
+            this.dgcClub2PlayerName.ReadOnly = true;
+            this.dgcClub2PlayerName.Width = 89;
+            // 
+            // dgcClub2PlayerSurname
+            // 
+            this.dgcClub2PlayerSurname.DataPropertyName = "PlayerSurname";
+            this.dgcClub2PlayerSurname.HeaderText = "PlayerSurname";
+            this.dgcClub2PlayerSurname.Name = "dgcClub2PlayerSurname";
+            this.dgcClub2PlayerSurname.ReadOnly = true;
+            this.dgcClub2PlayerSurname.Width = 103;
+            // 
+            // dgcClub2PlayerNumber
+            // 
+            this.dgcClub2PlayerNumber.DataPropertyName = "PlayerNumber";
+            this.dgcClub2PlayerNumber.HeaderText = "PlayerNumber";
+            this.dgcClub2PlayerNumber.Name = "dgcClub2PlayerNumber";
+            this.dgcClub2PlayerNumber.ReadOnly = true;
+            this.dgcClub2PlayerNumber.Width = 98;
+            // 
+            // dgcClub2PlayerRole
+            // 
+            this.dgcClub2PlayerRole.DataPropertyName = "PlayerRole";
+            this.dgcClub2PlayerRole.HeaderText = "PlayerRole";
+            this.dgcClub2PlayerRole.Name = "dgcClub2PlayerRole";
+            this.dgcClub2PlayerRole.ReadOnly = true;
+            this.dgcClub2PlayerRole.Width = 83;
+            // 
+            // dataGridViewCheckBoxColumn2
+            // 
+            this.dataGridViewCheckBoxColumn2.DataPropertyName = "IsVisible";
+            this.dataGridViewCheckBoxColumn2.HeaderText = "IsVisible";
+            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
+            this.dataGridViewCheckBoxColumn2.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn2.Visible = false;
+            this.dataGridViewCheckBoxColumn2.Width = 51;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "IDClub";
+            this.dataGridViewTextBoxColumn10.HeaderText = "IDClub";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Visible = false;
+            this.dataGridViewTextBoxColumn10.Width = 64;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1298, 609);
+            this.ClientSize = new System.Drawing.Size(1231, 727);
             this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.tbLog);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
+            this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTeamGuest)).EndInit();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTeamGuestLogo)).EndInit();
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmMain_KeyDown);
             this.groupBox4.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClub1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTeamHomeLogo)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClub2)).EndInit();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTeamGuestLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.DataGridView dgvTeamGuest;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dgcPlayerGuestIsVisible;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgcPlayerGuestName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgcPlayerGuestAge;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgcPlayerGuestNation;
-        private System.Windows.Forms.DataGridViewImageColumn dgcPlayerGuestFlag;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgcPlayerGuestNationShort;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgcPlayerGuestRanking;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgcPlayerGuestHand;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgcPlayerGuestID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgcPlayerGuestID_TTTeam;
-        private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.PictureBox pbTeamGuestLogo;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Button btnKillAll;
         private System.Windows.Forms.RadioButton rbPlayerGuest;
-        private System.Windows.Forms.RadioButton rbTeamsResult;
+        private System.Windows.Forms.RadioButton rbBallPossession;
         private System.Windows.Forms.RadioButton rbPlayerHome;
         private System.Windows.Forms.RadioButton rbClearGraphics;
         private System.Windows.Forms.RadioButton rbOfficials;
@@ -890,26 +1119,62 @@
         private System.Windows.Forms.ToolStripMenuItem startXPressionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.CheckBox cbSemiFinal;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rbTimeoutClub2;
+        private System.Windows.Forms.RadioButton rbTimeoutClub1;
         private System.Windows.Forms.ToolStripMenuItem teamsToolStripMenuItem;
         private databaseDataSet databaseDataSet;
-        private System.Windows.Forms.BindingSource teamBindingSource;
-        private databaseDataSetTableAdapters.TeamTableAdapter teamTableAdapter;
+        private System.Windows.Forms.BindingSource teamBindingSource1;
+        private databaseDataSetTableAdapters.TeamTableAdapter teamTableAdapter1;
         private databaseDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.ComboBox cbClub1;
-        private System.Windows.Forms.TextBox tbCoach;
-        private databaseDataSetTableAdapters.PlayerTableAdapter playerTableAdapter;
-        private System.Windows.Forms.BindingSource playerBindingSource;
+        private System.Windows.Forms.TextBox tbCoach1;
+        private databaseDataSetTableAdapters.PlayerTableAdapter playerTableAdapter1;
+        private System.Windows.Forms.BindingSource playerBindingSource1;
         private System.Windows.Forms.DataGridView dgvClub1;
+        private System.Windows.Forms.TextBox tbLog;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox tbPeriod;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgcClub1PlayerName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgcClub1PlayerSurname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgcClub1PlayerNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgcClub1PlayerRole;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.Button btnMatchSummary;
+        private System.Windows.Forms.TextBox tbTimePeriod;
+        private System.Windows.Forms.RadioButton rbUpScore;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.DataGridView dgvClub2;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.TextBox tbCoach2;
+        private System.Windows.Forms.ComboBox cbClub2;
+        private System.Windows.Forms.PictureBox pbTeamGuestLogo;
+        private System.Windows.Forms.Label label4;
+        private databaseDataSetTableAdapters.PlayerTableAdapter playerTableAdapter2;
+        private System.Windows.Forms.BindingSource playerBindingSource2;
+        private System.Windows.Forms.BindingSource teamBindingSource2;
+        private databaseDataSetTableAdapters.TeamTableAdapter teamTableAdapter2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgcClub2PlayerName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgcClub2PlayerSurname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgcClub2PlayerNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgcClub2PlayerRole;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
     }
 }
 
