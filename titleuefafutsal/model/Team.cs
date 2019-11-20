@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace titleuefafutsal.model
 {
@@ -24,5 +23,23 @@ namespace titleuefafutsal.model
         public string Red1 = "0";
         public string Red2 = "0";
         public string Score = "0";
+
+        public string PTS;
+        public string P;
+        public string W;
+        public string D;
+        public string L;
+        public string GF;
+        public string GA;
+
+
+        /*
+        CurrentScene.GetObjectByName("ClubPTS1", out c1pts);
+                CurrentScene.GetObjectByName("ClubP1", out c1p);
+                CurrentScene.GetObjectByName("ClubW1", out c1w);
+                CurrentScene.GetObjectByName("ClubD1", out c1d);
+                CurrentScene.GetObjectByName("ClubL1", out c1l);
+                CurrentScene.GetObjectByName("ClubGF1", out c1gf);
+                CurrentScene.GetObjectByName("ClubGA1", out c1ga);*/
     }
 }

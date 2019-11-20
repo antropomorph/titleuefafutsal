@@ -33,6 +33,7 @@
             System.Windows.Forms.Label label3;
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.rbUpScore = new System.Windows.Forms.RadioButton();
             this.btnMatchSummary = new System.Windows.Forms.Button();
             this.rbTimeoutClub2 = new System.Windows.Forms.RadioButton();
             this.rbTimeoutClub1 = new System.Windows.Forms.RadioButton();
@@ -77,6 +78,8 @@
             this.playerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.databaseDataSet = new titleuefafutsal.databaseDataSet();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.nudPossessionClub1 = new System.Windows.Forms.NumericUpDown();
             this.tbCoach1 = new System.Windows.Forms.TextBox();
             this.teamBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.cbClub1 = new System.Windows.Forms.ComboBox();
@@ -92,19 +95,9 @@
             this.tableAdapterManager = new titleuefafutsal.databaseDataSetTableAdapters.TableAdapterManager();
             this.playerTableAdapter1 = new titleuefafutsal.databaseDataSetTableAdapters.PlayerTableAdapter();
             this.tbLog = new System.Windows.Forms.TextBox();
-            this.rbUpScore = new System.Windows.Forms.RadioButton();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dgvClub2 = new System.Windows.Forms.DataGridView();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.tbCoach2 = new System.Windows.Forms.TextBox();
-            this.cbClub2 = new System.Windows.Forms.ComboBox();
-            this.pbTeamGuestLogo = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.playerTableAdapter2 = new titleuefafutsal.databaseDataSetTableAdapters.PlayerTableAdapter();
-            this.playerBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.teamBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.teamTableAdapter2 = new titleuefafutsal.databaseDataSetTableAdapters.TeamTableAdapter();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgcClub2PlayerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -113,6 +106,18 @@
             this.dgcClub2PlayerRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.playerBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.nudPossessionClub2 = new System.Windows.Forms.NumericUpDown();
+            this.tbCoach2 = new System.Windows.Forms.TextBox();
+            this.teamBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.cbClub2 = new System.Windows.Forms.ComboBox();
+            this.pbTeamGuestLogo = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.playerTableAdapter2 = new titleuefafutsal.databaseDataSetTableAdapters.PlayerTableAdapter();
+            this.teamTableAdapter2 = new titleuefafutsal.databaseDataSetTableAdapters.TeamTableAdapter();
+            this.btnGroupStandings = new System.Windows.Forms.Button();
             clubNameLabel = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
@@ -128,16 +133,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPossessionClub1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTeamHomeLogo)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClub2)).BeginInit();
-            this.groupBox9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTeamGuestLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource2)).BeginInit();
+            this.groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPossessionClub2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTeamGuestLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // clubNameLabel
@@ -148,6 +155,15 @@
             clubNameLabel.Size = new System.Drawing.Size(60, 13);
             clubNameLabel.TabIndex = 4;
             clubNameLabel.Text = "Название:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(6, 22);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(60, 13);
+            label3.TabIndex = 4;
+            label3.Text = "Название:";
             // 
             // groupBox4
             // 
@@ -166,6 +182,7 @@
             // 
             this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox8.Controls.Add(this.btnGroupStandings);
             this.groupBox8.Controls.Add(this.rbUpScore);
             this.groupBox8.Controls.Add(this.btnMatchSummary);
             this.groupBox8.Controls.Add(this.rbTimeoutClub2);
@@ -189,6 +206,21 @@
             this.groupBox8.TabIndex = 3;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Титры";
+            // 
+            // rbUpScore
+            // 
+            this.rbUpScore.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbUpScore.FlatAppearance.BorderSize = 2;
+            this.rbUpScore.FlatAppearance.CheckedBackColor = System.Drawing.Color.Green;
+            this.rbUpScore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbUpScore.Location = new System.Drawing.Point(244, 19);
+            this.rbUpScore.Name = "rbUpScore";
+            this.rbUpScore.Size = new System.Drawing.Size(212, 30);
+            this.rbUpScore.TabIndex = 20;
+            this.rbUpScore.Text = "Верхний счет [F5]";
+            this.rbUpScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbUpScore.UseVisualStyleBackColor = true;
+            this.rbUpScore.CheckedChanged += new System.EventHandler(this.rbUpScore_CheckedChanged);
             // 
             // btnMatchSummary
             // 
@@ -233,7 +265,7 @@
             // cbSemiFinal
             // 
             this.cbSemiFinal.AutoSize = true;
-            this.cbSemiFinal.Location = new System.Drawing.Point(376, 27);
+            this.cbSemiFinal.Location = new System.Drawing.Point(133, 27);
             this.cbSemiFinal.Name = "cbSemiFinal";
             this.cbSemiFinal.Size = new System.Drawing.Size(85, 17);
             this.cbSemiFinal.TabIndex = 16;
@@ -411,7 +443,7 @@
             this.rbEventTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbEventTitle.Location = new System.Drawing.Point(6, 19);
             this.rbEventTitle.Name = "rbEventTitle";
-            this.rbEventTitle.Size = new System.Drawing.Size(364, 30);
+            this.rbEventTitle.Size = new System.Drawing.Size(121, 30);
             this.rbEventTitle.TabIndex = 0;
             this.rbEventTitle.Text = "Заявочная";
             this.rbEventTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -574,7 +606,7 @@
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Location = new System.Drawing.Point(3, 32);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(362, 424);
+            this.groupBox1.Size = new System.Drawing.Size(362, 494);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Команда";
@@ -584,9 +616,9 @@
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox3.Controls.Add(this.dgvClub1);
-            this.groupBox3.Location = new System.Drawing.Point(6, 103);
+            this.groupBox3.Location = new System.Drawing.Point(6, 172);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(350, 315);
+            this.groupBox3.Size = new System.Drawing.Size(350, 316);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Состав";
@@ -699,6 +731,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.nudPossessionClub1);
             this.groupBox2.Controls.Add(this.tbCoach1);
             this.groupBox2.Controls.Add(this.cbClub1);
             this.groupBox2.Controls.Add(clubNameLabel);
@@ -706,9 +740,33 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(6, 14);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(350, 88);
+            this.groupBox2.Size = new System.Drawing.Size(350, 125);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(10, 78);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(59, 13);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Владение:";
+            // 
+            // nudPossessionClub1
+            // 
+            this.nudPossessionClub1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nudPossessionClub1.Location = new System.Drawing.Point(13, 94);
+            this.nudPossessionClub1.Name = "nudPossessionClub1";
+            this.nudPossessionClub1.Size = new System.Drawing.Size(53, 22);
+            this.nudPossessionClub1.TabIndex = 7;
+            this.nudPossessionClub1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudPossessionClub1.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.nudPossessionClub1.ValueChanged += new System.EventHandler(this.nudPossessionClub1_ValueChanged);
             // 
             // tbCoach1
             // 
@@ -825,21 +883,6 @@
             this.tbLog.Size = new System.Drawing.Size(366, 119);
             this.tbLog.TabIndex = 9;
             // 
-            // rbUpScore
-            // 
-            this.rbUpScore.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbUpScore.FlatAppearance.BorderSize = 2;
-            this.rbUpScore.FlatAppearance.CheckedBackColor = System.Drawing.Color.Green;
-            this.rbUpScore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbUpScore.Location = new System.Drawing.Point(6, 271);
-            this.rbUpScore.Name = "rbUpScore";
-            this.rbUpScore.Size = new System.Drawing.Size(212, 30);
-            this.rbUpScore.TabIndex = 20;
-            this.rbUpScore.Text = "Верхний счет [F5]";
-            this.rbUpScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rbUpScore.UseVisualStyleBackColor = true;
-            this.rbUpScore.CheckedChanged += new System.EventHandler(this.rbUpScore_CheckedChanged);
-            // 
             // groupBox5
             // 
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -848,7 +891,7 @@
             this.groupBox5.Controls.Add(this.groupBox9);
             this.groupBox5.Location = new System.Drawing.Point(858, 32);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(362, 424);
+            this.groupBox5.Size = new System.Drawing.Size(362, 494);
             this.groupBox5.TabIndex = 10;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Команда";
@@ -858,9 +901,9 @@
             this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox6.Controls.Add(this.dgvClub2);
-            this.groupBox6.Location = new System.Drawing.Point(6, 103);
+            this.groupBox6.Location = new System.Drawing.Point(6, 172);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(350, 315);
+            this.groupBox6.Size = new System.Drawing.Size(350, 316);
             this.groupBox6.TabIndex = 1;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Состав";
@@ -893,87 +936,6 @@
             this.dgvClub2.Size = new System.Drawing.Size(331, 288);
             this.dgvClub2.TabIndex = 0;
             this.dgvClub2.SelectionChanged += new System.EventHandler(this.dgvClub2_SelectionChanged);
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.tbCoach2);
-            this.groupBox9.Controls.Add(this.cbClub2);
-            this.groupBox9.Controls.Add(label3);
-            this.groupBox9.Controls.Add(this.pbTeamGuestLogo);
-            this.groupBox9.Controls.Add(this.label4);
-            this.groupBox9.Location = new System.Drawing.Point(6, 14);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(350, 88);
-            this.groupBox9.TabIndex = 0;
-            this.groupBox9.TabStop = false;
-            // 
-            // tbCoach2
-            // 
-            this.tbCoach2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.teamBindingSource2, "ClubCoach", true));
-            this.tbCoach2.Location = new System.Drawing.Point(72, 46);
-            this.tbCoach2.Name = "tbCoach2";
-            this.tbCoach2.ReadOnly = true;
-            this.tbCoach2.Size = new System.Drawing.Size(215, 20);
-            this.tbCoach2.TabIndex = 6;
-            // 
-            // cbClub2
-            // 
-            this.cbClub2.DataSource = this.teamBindingSource2;
-            this.cbClub2.DisplayMember = "ClubName";
-            this.cbClub2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbClub2.FormattingEnabled = true;
-            this.cbClub2.Location = new System.Drawing.Point(72, 19);
-            this.cbClub2.Name = "cbClub2";
-            this.cbClub2.Size = new System.Drawing.Size(215, 21);
-            this.cbClub2.TabIndex = 5;
-            this.cbClub2.ValueMember = "IDClub";
-            this.cbClub2.SelectedValueChanged += new System.EventHandler(this.cbClub2_SelectedValueChanged);
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(6, 22);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(60, 13);
-            label3.TabIndex = 4;
-            label3.Text = "Название:";
-            // 
-            // pbTeamGuestLogo
-            // 
-            this.pbTeamGuestLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbTeamGuestLogo.Location = new System.Drawing.Point(293, 19);
-            this.pbTeamGuestLogo.Name = "pbTeamGuestLogo";
-            this.pbTeamGuestLogo.Size = new System.Drawing.Size(47, 47);
-            this.pbTeamGuestLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbTeamGuestLogo.TabIndex = 4;
-            this.pbTeamGuestLogo.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 49);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Тренер:";
-            // 
-            // playerTableAdapter2
-            // 
-            this.playerTableAdapter2.ClearBeforeFill = true;
-            // 
-            // playerBindingSource2
-            // 
-            this.playerBindingSource2.DataMember = "Player";
-            this.playerBindingSource2.DataSource = this.databaseDataSet;
-            // 
-            // teamBindingSource2
-            // 
-            this.teamBindingSource2.DataMember = "Team";
-            this.teamBindingSource2.DataSource = this.databaseDataSet;
-            // 
-            // teamTableAdapter2
-            // 
-            this.teamTableAdapter2.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -1042,6 +1004,114 @@
             this.dataGridViewTextBoxColumn10.Visible = false;
             this.dataGridViewTextBoxColumn10.Width = 64;
             // 
+            // playerBindingSource2
+            // 
+            this.playerBindingSource2.DataMember = "Player";
+            this.playerBindingSource2.DataSource = this.databaseDataSet;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.label11);
+            this.groupBox9.Controls.Add(this.nudPossessionClub2);
+            this.groupBox9.Controls.Add(this.tbCoach2);
+            this.groupBox9.Controls.Add(this.cbClub2);
+            this.groupBox9.Controls.Add(label3);
+            this.groupBox9.Controls.Add(this.pbTeamGuestLogo);
+            this.groupBox9.Controls.Add(this.label4);
+            this.groupBox9.Location = new System.Drawing.Point(6, 14);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(350, 125);
+            this.groupBox9.TabIndex = 0;
+            this.groupBox9.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 78);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(59, 13);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Владение:";
+            // 
+            // nudPossessionClub2
+            // 
+            this.nudPossessionClub2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nudPossessionClub2.Location = new System.Drawing.Point(9, 94);
+            this.nudPossessionClub2.Name = "nudPossessionClub2";
+            this.nudPossessionClub2.ReadOnly = true;
+            this.nudPossessionClub2.Size = new System.Drawing.Size(53, 22);
+            this.nudPossessionClub2.TabIndex = 9;
+            this.nudPossessionClub2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudPossessionClub2.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            // 
+            // tbCoach2
+            // 
+            this.tbCoach2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.teamBindingSource2, "ClubCoach", true));
+            this.tbCoach2.Location = new System.Drawing.Point(72, 46);
+            this.tbCoach2.Name = "tbCoach2";
+            this.tbCoach2.ReadOnly = true;
+            this.tbCoach2.Size = new System.Drawing.Size(215, 20);
+            this.tbCoach2.TabIndex = 6;
+            // 
+            // teamBindingSource2
+            // 
+            this.teamBindingSource2.DataMember = "Team";
+            this.teamBindingSource2.DataSource = this.databaseDataSet;
+            // 
+            // cbClub2
+            // 
+            this.cbClub2.DataSource = this.teamBindingSource2;
+            this.cbClub2.DisplayMember = "ClubName";
+            this.cbClub2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbClub2.FormattingEnabled = true;
+            this.cbClub2.Location = new System.Drawing.Point(72, 19);
+            this.cbClub2.Name = "cbClub2";
+            this.cbClub2.Size = new System.Drawing.Size(215, 21);
+            this.cbClub2.TabIndex = 5;
+            this.cbClub2.ValueMember = "IDClub";
+            this.cbClub2.SelectedValueChanged += new System.EventHandler(this.cbClub2_SelectedValueChanged);
+            // 
+            // pbTeamGuestLogo
+            // 
+            this.pbTeamGuestLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbTeamGuestLogo.Location = new System.Drawing.Point(293, 19);
+            this.pbTeamGuestLogo.Name = "pbTeamGuestLogo";
+            this.pbTeamGuestLogo.Size = new System.Drawing.Size(47, 47);
+            this.pbTeamGuestLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbTeamGuestLogo.TabIndex = 4;
+            this.pbTeamGuestLogo.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Тренер:";
+            // 
+            // playerTableAdapter2
+            // 
+            this.playerTableAdapter2.ClearBeforeFill = true;
+            // 
+            // teamTableAdapter2
+            // 
+            this.teamTableAdapter2.ClearBeforeFill = true;
+            // 
+            // btnGroupStandings
+            // 
+            this.btnGroupStandings.Location = new System.Drawing.Point(244, 271);
+            this.btnGroupStandings.Name = "btnGroupStandings";
+            this.btnGroupStandings.Size = new System.Drawing.Size(215, 30);
+            this.btnGroupStandings.TabIndex = 21;
+            this.btnGroupStandings.Text = "Турнирная таблица";
+            this.btnGroupStandings.UseVisualStyleBackColor = true;
+            this.btnGroupStandings.Click += new System.EventHandler(this.btnGroupStandings_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1075,6 +1145,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPossessionClub1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTeamHomeLogo)).EndInit();
             this.menuStrip1.ResumeLayout(false);
@@ -1082,11 +1153,12 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClub2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource2)).EndInit();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTeamGuestLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPossessionClub2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTeamGuestLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1175,6 +1247,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcClub2PlayerRole;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.NumericUpDown nudPossessionClub1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.NumericUpDown nudPossessionClub2;
+        private System.Windows.Forms.Button btnGroupStandings;
     }
 }
 

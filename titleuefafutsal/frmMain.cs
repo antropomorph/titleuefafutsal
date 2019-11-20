@@ -238,7 +238,7 @@ namespace titleuefafutsal
         {
             if (xpression != null)
                 if ((sender as RadioButton).Checked)
-                    xpression.ShowBallPossession("10", "10", Club1.Logo, Club1.Logo);
+                    xpression.ShowBallPossession(nudPossessionClub1.Value.ToString(), nudPossessionClub2.Value.ToString(), Club1.Logo, Club2.Logo);
         }
 
         private void btnMatchSummary_Click(object sender, EventArgs e)
@@ -377,6 +377,21 @@ namespace titleuefafutsal
                     }
                     xpression.ShowTeam(Club2.Logo, Club2.Name, Club2.Coach, Club2Team);
                 }
+        }
+
+        private void nudPossessionClub1_ValueChanged(object sender, EventArgs e)
+        {
+            nudPossessionClub2.Value = 100 - nudPossessionClub1.Value;
+        }
+
+        private void btnGroupStandings_Click(object sender, EventArgs e)
+        {
+            FrmGroupStandings frmGroupStandings = new FrmGroupStandings();
+            frmGroupStandings.Owner = this;
+            if (frmGroupStandings.ShowDialog() == DialogResult.OK)
+            {
+                rbClearGraphics.Checked = false;
+            }
         }
     }
 }

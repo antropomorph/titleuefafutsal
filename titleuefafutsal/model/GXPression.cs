@@ -433,6 +433,128 @@ namespace titleuefafutsal.model
             }
         }
 
+        public void ShowGroupStandings(Team Club1, Team Club2, Team Club3, Team Club4)
+        {
+            xpBaseObject ClubName1, ClubName2, ClubName3, ClubName4,
+                c1pts, c1p, c1w, c1d, c1l, c1gf, c1ga,
+                c2pts, c2p, c2w, c2d, c2l, c2gf, c2ga,
+                c3pts, c3p, c3w, c3d, c3l, c3gf, c3ga,
+                c4pts, c4p, c4w, c4d, c4l, c4gf, c4ga;
+
+            xpBaseShader ClubLogo1, ClubLogo2, ClubLogo3, ClubLogo4;
+            xpMaterial ClubLogo1Material, ClubLogo2Material, ClubLogo3Material, ClubLogo4Material;
+
+            if (Project != null)
+            {
+                _HideScene();
+                Project.GetSceneByName("UFCL_FF_GroupStandings_HD", out CurrentScene);
+
+                //Teams Name
+                CurrentScene.GetObjectByName("ClubName1", out ClubName1);
+                CurrentScene.GetObjectByName("ClubName2", out ClubName2);
+                CurrentScene.GetObjectByName("ClubName3", out ClubName3);
+                CurrentScene.GetObjectByName("ClubName4", out ClubName4);
+                (ClubName1 as xpTextObject).Text = Club1.Name;
+                (ClubName2 as xpTextObject).Text = Club2.Name;
+                (ClubName3 as xpTextObject).Text = Club3.Name;
+                (ClubName4 as xpTextObject).Text = Club4.Name;
+
+                //Team1
+                CurrentScene.GetObjectByName("ClubPTS1", out c1pts);
+                CurrentScene.GetObjectByName("ClubP1", out c1p);
+                CurrentScene.GetObjectByName("ClubW1", out c1w);
+                CurrentScene.GetObjectByName("ClubD1", out c1d);
+                CurrentScene.GetObjectByName("ClubL1", out c1l);
+                CurrentScene.GetObjectByName("ClubGF1", out c1gf);
+                CurrentScene.GetObjectByName("ClubGA1", out c1ga);
+
+                (c1pts as xpTextObject).Text = Club1.PTS;
+                (c1p as xpTextObject).Text = Club1.P;
+                (c1w as xpTextObject).Text = Club1.W;
+                (c1d as xpTextObject).Text = Club1.D;
+                (c1l as xpTextObject).Text = Club1.L;
+                (c1gf as xpTextObject).Text = Club1.GF;
+                (c1ga as xpTextObject).Text = Club1.GA;
+
+
+                //Team2
+                CurrentScene.GetObjectByName("ClubPTS2", out c2pts);
+                CurrentScene.GetObjectByName("ClubP2", out c2p);
+                CurrentScene.GetObjectByName("ClubW2", out c2w);
+                CurrentScene.GetObjectByName("ClubD2", out c2d);
+                CurrentScene.GetObjectByName("ClubL2", out c2l);
+                CurrentScene.GetObjectByName("ClubGF2", out c2gf);
+                CurrentScene.GetObjectByName("ClubGA2", out c2ga);
+
+                (c2pts as xpTextObject).Text = Club2.PTS;
+                (c2p as xpTextObject).Text = Club2.P;
+                (c2w as xpTextObject).Text = Club2.W;
+                (c2d as xpTextObject).Text = Club2.D;
+                (c2l as xpTextObject).Text = Club2.L;
+                (c2gf as xpTextObject).Text = Club2.GF;
+                (c2ga as xpTextObject).Text = Club2.GA;
+
+                //Team3
+                CurrentScene.GetObjectByName("ClubPTS3", out c3pts);
+                CurrentScene.GetObjectByName("ClubP3", out c3p);
+                CurrentScene.GetObjectByName("ClubW3", out c3w);
+                CurrentScene.GetObjectByName("ClubD3", out c3d);
+                CurrentScene.GetObjectByName("ClubL3", out c3l);
+                CurrentScene.GetObjectByName("ClubGF3", out c3gf);
+                CurrentScene.GetObjectByName("ClubGA3", out c3ga);
+
+                (c3pts as xpTextObject).Text = Club3.PTS;
+                (c3p as xpTextObject).Text = Club3.P;
+                (c3w as xpTextObject).Text = Club3.W;
+                (c3d as xpTextObject).Text = Club3.D;
+                (c3l as xpTextObject).Text = Club3.L;
+                (c3gf as xpTextObject).Text = Club3.GF;
+                (c3ga as xpTextObject).Text = Club3.GA;
+
+                //Team4
+                CurrentScene.GetObjectByName("ClubPTS4", out c4pts);
+                CurrentScene.GetObjectByName("ClubP4", out c4p);
+                CurrentScene.GetObjectByName("ClubW4", out c4w);
+                CurrentScene.GetObjectByName("ClubD4", out c4d);
+                CurrentScene.GetObjectByName("ClubL4", out c4l);
+                CurrentScene.GetObjectByName("ClubGF4", out c4gf);
+                CurrentScene.GetObjectByName("ClubGA4", out c4ga);
+
+                (c4pts as xpTextObject).Text = Club4.PTS;
+                (c4p as xpTextObject).Text = Club4.P;
+                (c4w as xpTextObject).Text = Club4.W;
+                (c4d as xpTextObject).Text = Club4.D;
+                (c4l as xpTextObject).Text = Club4.L;
+                (c4gf as xpTextObject).Text = Club4.GF;
+                (c4ga as xpTextObject).Text = Club4.GA;
+
+
+                //Teams logos
+                Project.GetMaterialByName("ClubLogo1", out ClubLogo1Material);
+                ClubLogo1Material.GetShaderByName("Texture", out ClubLogo1);
+                ClubLogo1.FileName = Club1.Logo;
+                ClubLogo1.ReloadFile();
+
+                Project.GetMaterialByName("ClubLogo2", out ClubLogo2Material);
+                ClubLogo2Material.GetShaderByName("Texture", out ClubLogo2);
+                ClubLogo2.FileName = Club2.Logo;
+                ClubLogo2.ReloadFile();
+
+                Project.GetMaterialByName("ClubLogo3", out ClubLogo3Material);
+                ClubLogo3Material.GetShaderByName("Texture", out ClubLogo3);
+                ClubLogo3.FileName = Club3.Logo;
+                ClubLogo3.ReloadFile();
+
+                Project.GetMaterialByName("ClubLogo4", out ClubLogo4Material);
+                ClubLogo4Material.GetShaderByName("Texture", out ClubLogo4);
+                ClubLogo4.FileName = Club4.Logo;
+                ClubLogo4.ReloadFile();
+
+                CurrentScene.SceneDirector.Play();
+                CurrentScene.SetOnline(0);
+            }
+        }
+
         public bool HideScene()
         {
             if (Project != null)
