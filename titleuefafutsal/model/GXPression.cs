@@ -367,10 +367,79 @@ namespace titleuefafutsal.model
             }
         }
 
-        //UFCL_PermClock_HD
+        public void ShowCard(Team Club, Player player, bool red)
+        {
+            xpBaseShader clubLogo;
+            xpMaterial clubLogoMaterial;
+            xpBaseObject PlayerNameNumber, Red, Yellow;
+
+            if (Project != null)
+            {
+                _HideScene();
+                Project.GetSceneByName("UFCL_OverlayClock_Card", out CurrentScene);
+
+                CurrentScene.GetObjectByName("PlayerNameNumber", out PlayerNameNumber);
+                CurrentScene.GetObjectByName("Red", out Red);
+                CurrentScene.GetObjectByName("Yellow", out Yellow);
+
+                (PlayerNameNumber as xpTextObject).Text = player.Number + " " + player.Surname;
+
+                if (red)
+                {
+                    (Red as xpQuadObject).Visible = true;
+                    (Yellow as xpQuadObject).Visible = false;
+                } else
+                {
+                    (Red as xpQuadObject).Visible = false;
+                    (Yellow as xpQuadObject).Visible = true;
+                }
+
+                Project.GetMaterialByName("ClubLogo", out clubLogoMaterial);
+                clubLogoMaterial.GetShaderByName("Texture", out clubLogo);
+                clubLogo.FileName = Club.Logo;
+                clubLogo.ReloadFile();
+
+                //CurrentScene.SceneDirector.Position = 0;
+                CurrentScene.SceneDirector.Play();
+                CurrentScene.SetOnline(0);
+            }
+        }
+
+        public void SetTime(string Time)
+        {
+            xpBaseObject Timer;
+            if (Project != null)
+            {
+                if (CurrentScene != null)
+                    if (CurrentScene.Name == "UFCL_PermClock_HD")
+                    {
+                        CurrentScene.GetObjectByName("Timer", out Timer);
+                        (Timer as xpTextObject).Text = Time;
+                    }
+            }
+
+        }
+
+        public void SetScore(string Score1, string Score2)
+        {
+            xpBaseObject ClubScore1, ClubScore2;
+            if (Project != null)
+            {
+                if (CurrentScene != null)
+                    if (CurrentScene.Name == "UFCL_PermClock_HD")
+                    {
+                        CurrentScene.GetObjectByName("ClubScore1", out ClubScore1);
+                        CurrentScene.GetObjectByName("ClubScore2", out ClubScore2);
+                        (ClubScore1 as xpTextObject).Text = Score1;
+                        (ClubScore2 as xpTextObject).Text = Score2;
+                    }
+            }
+
+        }
+
         public void ShowUpscore(Team Club1, Team Club2, Settings settings)
         {
-            xpBaseObject ClubName1, ClubName2, ClubScore1, ClubScore2, Period;
+            xpBaseObject ClubName1, ClubName2, ClubScore1, ClubScore2, Period, Timer;
             xpBaseShader club1Color, club2Color;
             xpMaterial club1ColorMaterial, club2ColorMaterial;
 
@@ -384,12 +453,14 @@ namespace titleuefafutsal.model
                 CurrentScene.GetObjectByName("ClubScore1", out ClubScore1);
                 CurrentScene.GetObjectByName("ClubScore2", out ClubScore2);
                 CurrentScene.GetObjectByName("Period", out Period);
+                CurrentScene.GetObjectByName("Timer", out Timer);
 
                 (ClubName1 as xpTextObject).Text = Club1.NameShort;
                 (ClubName2 as xpTextObject).Text = Club2.NameShort;
                 (ClubScore1 as xpTextObject).Text = Club1.Score;
                 (ClubScore2 as xpTextObject).Text = Club2.Score;
                 (Period as xpTextObject).Text = settings.Period;
+                (Timer as xpTextObject).Text = settings.Timer;
 
 
                 /*Project.GetMaterialByName("ClubLogo1", out club1LogoMaterial);

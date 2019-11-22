@@ -100,6 +100,7 @@
     <Compile Include="model\Player.cs" />
     <Compile Include="model\Settings.cs" />
     <Compile Include="model\Team.cs" />
+    <Compile Include="model\TimerClient.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmGroupStandings.resx">

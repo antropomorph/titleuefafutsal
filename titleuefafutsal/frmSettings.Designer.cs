@@ -39,18 +39,25 @@
             this.tbDateTime = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tbTimeKeeper = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tbThirdOfficial = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.tbSecondReferee = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tbReferee = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.tbThirdOfficial = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.tbTimeKeeper = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tbTimeServerPort = new System.Windows.Forms.TextBox();
+            this.tbTimeServerAdress = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cbUseTimeServer = new System.Windows.Forms.CheckBox();
             this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox5
@@ -156,6 +163,49 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Судьи";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 16);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(351, 65);
+            this.label9.TabIndex = 8;
+            this.label9.Text = resources.GetString("label9.Text");
+            // 
+            // tbTimeKeeper
+            // 
+            this.tbTimeKeeper.Location = new System.Drawing.Point(120, 169);
+            this.tbTimeKeeper.Name = "tbTimeKeeper";
+            this.tbTimeKeeper.Size = new System.Drawing.Size(257, 20);
+            this.tbTimeKeeper.TabIndex = 7;
+            this.tbTimeKeeper.Text = "TIMEKEEPER: {fntPlayerBold}NAME SURNAME {fntCountry}(ITA)";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 172);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(79, 13);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "TIMEKEEPER:";
+            // 
+            // tbThirdOfficial
+            // 
+            this.tbThirdOfficial.Location = new System.Drawing.Point(120, 143);
+            this.tbThirdOfficial.Name = "tbThirdOfficial";
+            this.tbThirdOfficial.Size = new System.Drawing.Size(257, 20);
+            this.tbThirdOfficial.TabIndex = 5;
+            this.tbThirdOfficial.Text = "THIRD OFFICIAL: {fntPlayerBold}NAME SURNAME {fntCountry}(ITA)";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 146);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(93, 13);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "THIRD OFFICIAL:";
+            // 
             // tbSecondReferee
             // 
             this.tbSecondReferee.Location = new System.Drawing.Point(120, 117);
@@ -193,7 +243,7 @@
             // button1
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(325, 369);
+            this.button1.Location = new System.Drawing.Point(325, 486);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 6;
@@ -201,54 +251,70 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // tbThirdOfficial
+            // groupBox2
             // 
-            this.tbThirdOfficial.Location = new System.Drawing.Point(120, 143);
-            this.tbThirdOfficial.Name = "tbThirdOfficial";
-            this.tbThirdOfficial.Size = new System.Drawing.Size(257, 20);
-            this.tbThirdOfficial.TabIndex = 5;
-            this.tbThirdOfficial.Text = "THIRD OFFICIAL: {fntPlayerBold}NAME SURNAME {fntCountry}(ITA)";
+            this.groupBox2.Controls.Add(this.cbUseTimeServer);
+            this.groupBox2.Controls.Add(this.tbTimeServerPort);
+            this.groupBox2.Controls.Add(this.tbTimeServerAdress);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Location = new System.Drawing.Point(12, 359);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(388, 99);
+            this.groupBox2.TabIndex = 7;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Подключение к табло";
             // 
-            // label7
+            // tbTimeServerPort
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 146);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(93, 13);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "THIRD OFFICIAL:";
+            this.tbTimeServerPort.Location = new System.Drawing.Point(190, 50);
+            this.tbTimeServerPort.Name = "tbTimeServerPort";
+            this.tbTimeServerPort.Size = new System.Drawing.Size(47, 20);
+            this.tbTimeServerPort.TabIndex = 11;
+            this.tbTimeServerPort.Text = "12340";
             // 
-            // tbTimeKeeper
+            // tbTimeServerAdress
             // 
-            this.tbTimeKeeper.Location = new System.Drawing.Point(120, 169);
-            this.tbTimeKeeper.Name = "tbTimeKeeper";
-            this.tbTimeKeeper.Size = new System.Drawing.Size(257, 20);
-            this.tbTimeKeeper.TabIndex = 7;
-            this.tbTimeKeeper.Text = "TIMEKEEPER: {fntPlayerBold}NAME SURNAME {fntCountry}(ITA)";
+            this.tbTimeServerAdress.Location = new System.Drawing.Point(55, 50);
+            this.tbTimeServerAdress.Name = "tbTimeServerAdress";
+            this.tbTimeServerAdress.Size = new System.Drawing.Size(88, 20);
+            this.tbTimeServerAdress.TabIndex = 10;
+            this.tbTimeServerAdress.Text = "192.168.0.102";
             // 
-            // label8
+            // label10
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 172);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 13);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "TIMEKEEPER:";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(149, 53);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(35, 13);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Порт:";
             // 
-            // label9
+            // label11
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 16);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(351, 65);
-            this.label9.TabIndex = 8;
-            this.label9.Text = resources.GetString("label9.Text");
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(8, 53);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(41, 13);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Адрес:";
+            // 
+            // cbUseTimeServer
+            // 
+            this.cbUseTimeServer.AutoSize = true;
+            this.cbUseTimeServer.Location = new System.Drawing.Point(9, 28);
+            this.cbUseTimeServer.Name = "cbUseTimeServer";
+            this.cbUseTimeServer.Size = new System.Drawing.Size(131, 17);
+            this.cbUseTimeServer.TabIndex = 12;
+            this.cbUseTimeServer.Text = "Использовать табло";
+            this.cbUseTimeServer.UseVisualStyleBackColor = true;
             // 
             // frmSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(416, 409);
+            this.ClientSize = new System.Drawing.Size(416, 521);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
@@ -261,6 +327,8 @@
             this.groupBox5.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -287,5 +355,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tbThirdOfficial;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.CheckBox cbUseTimeServer;
+        private System.Windows.Forms.TextBox tbTimeServerPort;
+        private System.Windows.Forms.TextBox tbTimeServerAdress;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
     }
 }

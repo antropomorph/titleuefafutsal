@@ -18,6 +18,9 @@ namespace titleuefafutsal
             tbSecondReferee.Text = this.settings.SecondReferee;
             tbThirdOfficial.Text = this.settings.ThirdOfficial;
             tbTimeKeeper.Text = this.settings.TimeKeeper;
+            tbTimeServerAdress.Text = this.settings.TimeServerAddress;
+            tbTimeServerPort.Text = this.settings.TimeServerPort;
+            cbUseTimeServer.Checked = this.settings.UseTimeServer;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -28,6 +31,9 @@ namespace titleuefafutsal
             this.settings.SecondReferee = tbSecondReferee.Text;
             this.settings.ThirdOfficial = tbThirdOfficial.Text;
             this.settings.TimeKeeper = tbTimeKeeper.Text;
+            this.settings.TimeServerAddress = tbTimeServerAdress.Text;
+            this.settings.TimeServerPort = tbTimeServerPort.Text;
+            this.settings.UseTimeServer = cbUseTimeServer.Checked;
         }
     }
 }

@@ -22,6 +22,10 @@ namespace titleuefafutsal
         Player Player1 = new Player();
         Player Player2 = new Player();
 
+        private bool remoteClientConnected = false;
+
+        private RemoteClient remoteClient;
+
         public frmMain()
         {
             InitializeComponent();
@@ -32,9 +36,21 @@ namespace titleuefafutsal
             }
         }
 
-        public void Log(string message)
+        String GetLogDateTime()
         {
-            tbLog.AppendText(message + System.Environment.NewLine);
+            return DateTime.Now.ToString();
+        }
+
+        public void Log(TextBox TextBoxLog, string Text)
+        {
+            TextBoxLog.Invoke(new Action(() =>
+                TextBoxLog.AppendText("[" + GetLogDateTime() + "]: " + Text + Environment.NewLine)));
+        }
+
+        public void SetTime(TextBox TextBoxLog, string Text)
+        {
+            TextBoxLog.Invoke(new Action(() =>
+                TextBoxLog.Text = Text));
         }
 
         private void btnKillAll_Click(object sender, EventArgs e)
@@ -170,9 +186,9 @@ namespace titleuefafutsal
 
                 Club1Team.Clear();
 
-                if(dgvClub1.Rows.Count != 0)
+                if (dgvClub1.Rows.Count != 0)
                 {
-                    foreach(var p in dgvClub1.Rows)
+                    foreach (var p in dgvClub1.Rows)
                     {
                         Player temp = new Player();
                         temp.Name = ((DataGridViewRow)p).Cells["dgcClub1PlayerName"].Value.ToString();
@@ -245,7 +261,7 @@ namespace titleuefafutsal
         {
             frmMatchSummary FrmMatchSummary = new frmMatchSummary(Club1, Club2);
             FrmMatchSummary.Owner = this;
-            if(FrmMatchSummary.ShowDialog() == DialogResult.OK)
+            if (FrmMatchSummary.ShowDialog() == DialogResult.OK)
             {
                 rbClearGraphics.Checked = false;
             }
@@ -281,11 +297,15 @@ namespace titleuefafutsal
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             Club1.Score = (sender as NumericUpDown).Value.ToString();
+            if (xpression != null)
+                xpression.SetScore(Club1.Score, Club2.Score);
         }
 
         private void numericUpDown4_ValueChanged(object sender, EventArgs e)
         {
             Club2.Score = (sender as NumericUpDown).Value.ToString();
+            if (xpression != null)
+                xpression.SetScore(Club1.Score, Club2.Score);
         }
 
         private void rbUpScore_CheckedChanged(object sender, EventArgs e)
@@ -392,6 +412,91 @@ namespace titleuefafutsal
             {
                 rbClearGraphics.Checked = false;
             }
+        }
+
+        private void btnConnectTimeServer_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!remoteClientConnected)
+                {
+                    remoteClientConnected = true;
+                    ClientConnect(gameSettings);
+                    (sender as Button).Text = "Отключиться от табло";
+
+                }
+                else
+                {
+                    ClientDisconnect();
+                    (sender as Button).Text = "Подключиться к табло";
+                    remoteClientConnected = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log(tbLog, ex.Message);
+            }
+        }
+
+        public void ClientConnect(Settings gameInfo)
+        {
+            remoteClient = new RemoteClient(gameSettings);
+            remoteClient.LogMessage += (s) => Invoke(new Action(() => Log(tbLog, s)));
+            remoteClient.LogMessage += (s) => Invoke(new Action(() => SetTime(tbTime, s)));
+            remoteClient.Start();
+        }
+
+        public void ClientDisconnect()
+        {
+            if (remoteClient != null)
+            {
+                remoteClient.Stop();
+            }
+        }
+
+        private void tbTime_TextChanged(object sender, EventArgs e)
+        {
+            if (xpression != null)
+                //if ((sender as RadioButton).Checked)
+                try
+                {
+                    xpression.SetTime((sender as TextBox).Text);
+                } catch(Exception ext)
+                {
+                    Log(tbLog, ext.Message);
+                }
+        }
+
+        private void rbYellowHome_CheckedChanged(object sender, EventArgs e)
+        {
+            if (xpression != null)
+                if ((sender as RadioButton).Checked)
+
+                    xpression.ShowCard(Club1, Player1, false);
+        }
+
+        private void rbRedHome_CheckedChanged(object sender, EventArgs e)
+        {
+            if (xpression != null)
+                if ((sender as RadioButton).Checked)
+
+                    xpression.ShowCard(Club1, Player1, true);
+        }
+
+        private void rbYellowGuest_CheckedChanged(object sender, EventArgs e)
+        {
+            if (xpression != null)
+                if ((sender as RadioButton).Checked)
+
+                    xpression.ShowCard(Club2, Player2, false);
+        }
+
+        private void rbRedGuest_CheckedChanged(object sender, EventArgs e)
+        {
+            if (xpression != null)
+                if ((sender as RadioButton).Checked)
+
+                    xpression.ShowCard(Club2, Player2, true);
         }
     }
 }

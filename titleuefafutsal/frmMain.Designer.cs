@@ -33,6 +33,7 @@
             System.Windows.Forms.Label label3;
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.btnGroupStandings = new System.Windows.Forms.Button();
             this.rbUpScore = new System.Windows.Forms.RadioButton();
             this.btnMatchSummary = new System.Windows.Forms.Button();
             this.rbTimeoutClub2 = new System.Windows.Forms.RadioButton();
@@ -51,8 +52,9 @@
             this.rbScoreBig = new System.Windows.Forms.RadioButton();
             this.rbEventTitle = new System.Windows.Forms.RadioButton();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btnConnectTimeServer = new System.Windows.Forms.Button();
             this.tbTimePeriod = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbTime = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.tbPeriod = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -117,7 +119,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.playerTableAdapter2 = new titleuefafutsal.databaseDataSetTableAdapters.PlayerTableAdapter();
             this.teamTableAdapter2 = new titleuefafutsal.databaseDataSetTableAdapters.TeamTableAdapter();
-            this.btnGroupStandings = new System.Windows.Forms.Button();
+            this.rbYellowGuest = new System.Windows.Forms.RadioButton();
+            this.rbYellowHome = new System.Windows.Forms.RadioButton();
+            this.rbRedGuest = new System.Windows.Forms.RadioButton();
+            this.rbRedHome = new System.Windows.Forms.RadioButton();
             clubNameLabel = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
@@ -182,6 +187,10 @@
             // 
             this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox8.Controls.Add(this.rbRedGuest);
+            this.groupBox8.Controls.Add(this.rbRedHome);
+            this.groupBox8.Controls.Add(this.rbYellowGuest);
+            this.groupBox8.Controls.Add(this.rbYellowHome);
             this.groupBox8.Controls.Add(this.btnGroupStandings);
             this.groupBox8.Controls.Add(this.rbUpScore);
             this.groupBox8.Controls.Add(this.btnMatchSummary);
@@ -207,6 +216,16 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Титры";
             // 
+            // btnGroupStandings
+            // 
+            this.btnGroupStandings.Location = new System.Drawing.Point(244, 343);
+            this.btnGroupStandings.Name = "btnGroupStandings";
+            this.btnGroupStandings.Size = new System.Drawing.Size(215, 30);
+            this.btnGroupStandings.TabIndex = 21;
+            this.btnGroupStandings.Text = "Турнирная таблица";
+            this.btnGroupStandings.UseVisualStyleBackColor = true;
+            this.btnGroupStandings.Click += new System.EventHandler(this.btnGroupStandings_Click);
+            // 
             // rbUpScore
             // 
             this.rbUpScore.Appearance = System.Windows.Forms.Appearance.Button;
@@ -224,7 +243,7 @@
             // 
             // btnMatchSummary
             // 
-            this.btnMatchSummary.Location = new System.Drawing.Point(244, 235);
+            this.btnMatchSummary.Location = new System.Drawing.Point(244, 307);
             this.btnMatchSummary.Name = "btnMatchSummary";
             this.btnMatchSummary.Size = new System.Drawing.Size(215, 30);
             this.btnMatchSummary.TabIndex = 19;
@@ -238,7 +257,7 @@
             this.rbTimeoutClub2.FlatAppearance.BorderSize = 2;
             this.rbTimeoutClub2.FlatAppearance.CheckedBackColor = System.Drawing.Color.Green;
             this.rbTimeoutClub2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbTimeoutClub2.Location = new System.Drawing.Point(244, 163);
+            this.rbTimeoutClub2.Location = new System.Drawing.Point(244, 235);
             this.rbTimeoutClub2.Name = "rbTimeoutClub2";
             this.rbTimeoutClub2.Size = new System.Drawing.Size(215, 30);
             this.rbTimeoutClub2.TabIndex = 18;
@@ -253,7 +272,7 @@
             this.rbTimeoutClub1.FlatAppearance.BorderSize = 2;
             this.rbTimeoutClub1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Green;
             this.rbTimeoutClub1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbTimeoutClub1.Location = new System.Drawing.Point(6, 163);
+            this.rbTimeoutClub1.Location = new System.Drawing.Point(6, 235);
             this.rbTimeoutClub1.Name = "rbTimeoutClub1";
             this.rbTimeoutClub1.Size = new System.Drawing.Size(212, 30);
             this.rbTimeoutClub1.TabIndex = 17;
@@ -275,7 +294,7 @@
             // 
             // btnKillAll
             // 
-            this.btnKillAll.Location = new System.Drawing.Point(6, 326);
+            this.btnKillAll.Location = new System.Drawing.Point(6, 379);
             this.btnKillAll.Name = "btnKillAll";
             this.btnKillAll.Size = new System.Drawing.Size(453, 23);
             this.btnKillAll.TabIndex = 15;
@@ -304,7 +323,7 @@
             this.rbBallPossession.FlatAppearance.BorderSize = 2;
             this.rbBallPossession.FlatAppearance.CheckedBackColor = System.Drawing.Color.Green;
             this.rbBallPossession.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbBallPossession.Location = new System.Drawing.Point(244, 199);
+            this.rbBallPossession.Location = new System.Drawing.Point(244, 271);
             this.rbBallPossession.Name = "rbBallPossession";
             this.rbBallPossession.Size = new System.Drawing.Size(215, 30);
             this.rbBallPossession.TabIndex = 13;
@@ -337,9 +356,9 @@
             this.rbClearGraphics.FlatAppearance.BorderSize = 2;
             this.rbClearGraphics.FlatAppearance.CheckedBackColor = System.Drawing.Color.Green;
             this.rbClearGraphics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbClearGraphics.Location = new System.Drawing.Point(6, 355);
+            this.rbClearGraphics.Location = new System.Drawing.Point(6, 408);
             this.rbClearGraphics.Name = "rbClearGraphics";
-            this.rbClearGraphics.Size = new System.Drawing.Size(453, 141);
+            this.rbClearGraphics.Size = new System.Drawing.Size(453, 88);
             this.rbClearGraphics.TabIndex = 10;
             this.rbClearGraphics.TabStop = true;
             this.rbClearGraphics.Text = "Убрать графику [F4]";
@@ -353,7 +372,7 @@
             this.rbOfficials.FlatAppearance.BorderSize = 2;
             this.rbOfficials.FlatAppearance.CheckedBackColor = System.Drawing.Color.Green;
             this.rbOfficials.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbOfficials.Location = new System.Drawing.Point(6, 199);
+            this.rbOfficials.Location = new System.Drawing.Point(6, 271);
             this.rbOfficials.Name = "rbOfficials";
             this.rbOfficials.Size = new System.Drawing.Size(212, 30);
             this.rbOfficials.TabIndex = 8;
@@ -426,7 +445,7 @@
             this.rbScoreBig.FlatAppearance.BorderSize = 2;
             this.rbScoreBig.FlatAppearance.CheckedBackColor = System.Drawing.Color.Green;
             this.rbScoreBig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbScoreBig.Location = new System.Drawing.Point(6, 235);
+            this.rbScoreBig.Location = new System.Drawing.Point(6, 307);
             this.rbScoreBig.Name = "rbScoreBig";
             this.rbScoreBig.Size = new System.Drawing.Size(212, 30);
             this.rbScoreBig.TabIndex = 2;
@@ -452,8 +471,9 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.btnConnectTimeServer);
             this.groupBox7.Controls.Add(this.tbTimePeriod);
-            this.groupBox7.Controls.Add(this.textBox1);
+            this.groupBox7.Controls.Add(this.tbTime);
             this.groupBox7.Controls.Add(this.label9);
             this.groupBox7.Controls.Add(this.tbPeriod);
             this.groupBox7.Controls.Add(this.label8);
@@ -472,6 +492,16 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Игра";
             // 
+            // btnConnectTimeServer
+            // 
+            this.btnConnectTimeServer.Location = new System.Drawing.Point(258, 88);
+            this.btnConnectTimeServer.Name = "btnConnectTimeServer";
+            this.btnConnectTimeServer.Size = new System.Drawing.Size(139, 23);
+            this.btnConnectTimeServer.TabIndex = 15;
+            this.btnConnectTimeServer.Text = "Подключиться к табло";
+            this.btnConnectTimeServer.UseVisualStyleBackColor = true;
+            this.btnConnectTimeServer.Click += new System.EventHandler(this.btnConnectTimeServer_Click);
+            // 
             // tbTimePeriod
             // 
             this.tbTimePeriod.Location = new System.Drawing.Point(142, 37);
@@ -481,12 +511,14 @@
             this.tbTimePeriod.Text = "HALF TIME";
             this.tbTimePeriod.Validated += new System.EventHandler(this.tbTimePeriod_Validated);
             // 
-            // textBox1
+            // tbTime
             // 
-            this.textBox1.Location = new System.Drawing.Point(244, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(79, 20);
-            this.textBox1.TabIndex = 13;
+            this.tbTime.Location = new System.Drawing.Point(244, 37);
+            this.tbTime.Name = "tbTime";
+            this.tbTime.Size = new System.Drawing.Size(79, 20);
+            this.tbTime.TabIndex = 13;
+            this.tbTime.Text = "00:00";
+            this.tbTime.TextChanged += new System.EventHandler(this.tbTime_TextChanged);
             // 
             // label9
             // 
@@ -549,11 +581,6 @@
             this.numericUpDown4.Name = "numericUpDown4";
             this.numericUpDown4.Size = new System.Drawing.Size(53, 35);
             this.numericUpDown4.TabIndex = 6;
-            this.numericUpDown4.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
             this.numericUpDown4.ValueChanged += new System.EventHandler(this.numericUpDown4_ValueChanged);
             // 
             // label6
@@ -591,11 +618,6 @@
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(53, 35);
             this.numericUpDown1.TabIndex = 0;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // groupBox1
@@ -835,27 +857,27 @@
             this.startXPressionToolStripMenuItem,
             this.settingsToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // startXPressionToolStripMenuItem
             // 
             this.startXPressionToolStripMenuItem.Name = "startXPressionToolStripMenuItem";
-            this.startXPressionToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.startXPressionToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.startXPressionToolStripMenuItem.Text = "Запустить XPression";
             this.startXPressionToolStripMenuItem.Click += new System.EventHandler(this.startXPressionToolStripMenuItem_Click);
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.settingsToolStripMenuItem.Text = "Настройки";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // teamsToolStripMenuItem
             // 
             this.teamsToolStripMenuItem.Name = "teamsToolStripMenuItem";
-            this.teamsToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.teamsToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.teamsToolStripMenuItem.Text = "Команды";
             this.teamsToolStripMenuItem.Click += new System.EventHandler(this.teamsToolStripMenuItem_Click);
             // 
@@ -1102,15 +1124,65 @@
             // 
             this.teamTableAdapter2.ClearBeforeFill = true;
             // 
-            // btnGroupStandings
+            // rbYellowGuest
             // 
-            this.btnGroupStandings.Location = new System.Drawing.Point(244, 271);
-            this.btnGroupStandings.Name = "btnGroupStandings";
-            this.btnGroupStandings.Size = new System.Drawing.Size(215, 30);
-            this.btnGroupStandings.TabIndex = 21;
-            this.btnGroupStandings.Text = "Турнирная таблица";
-            this.btnGroupStandings.UseVisualStyleBackColor = true;
-            this.btnGroupStandings.Click += new System.EventHandler(this.btnGroupStandings_Click);
+            this.rbYellowGuest.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbYellowGuest.FlatAppearance.BorderSize = 2;
+            this.rbYellowGuest.FlatAppearance.CheckedBackColor = System.Drawing.Color.Green;
+            this.rbYellowGuest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbYellowGuest.Location = new System.Drawing.Point(244, 163);
+            this.rbYellowGuest.Name = "rbYellowGuest";
+            this.rbYellowGuest.Size = new System.Drawing.Size(215, 30);
+            this.rbYellowGuest.TabIndex = 23;
+            this.rbYellowGuest.Text = "Желтая карточка";
+            this.rbYellowGuest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbYellowGuest.UseVisualStyleBackColor = true;
+            this.rbYellowGuest.CheckedChanged += new System.EventHandler(this.rbYellowGuest_CheckedChanged);
+            // 
+            // rbYellowHome
+            // 
+            this.rbYellowHome.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbYellowHome.FlatAppearance.BorderSize = 2;
+            this.rbYellowHome.FlatAppearance.CheckedBackColor = System.Drawing.Color.Green;
+            this.rbYellowHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbYellowHome.Location = new System.Drawing.Point(6, 163);
+            this.rbYellowHome.Name = "rbYellowHome";
+            this.rbYellowHome.Size = new System.Drawing.Size(212, 30);
+            this.rbYellowHome.TabIndex = 22;
+            this.rbYellowHome.Text = "Желтая карточка";
+            this.rbYellowHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbYellowHome.UseVisualStyleBackColor = true;
+            this.rbYellowHome.CheckedChanged += new System.EventHandler(this.rbYellowHome_CheckedChanged);
+            // 
+            // rbRedGuest
+            // 
+            this.rbRedGuest.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbRedGuest.FlatAppearance.BorderSize = 2;
+            this.rbRedGuest.FlatAppearance.CheckedBackColor = System.Drawing.Color.Green;
+            this.rbRedGuest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbRedGuest.Location = new System.Drawing.Point(244, 199);
+            this.rbRedGuest.Name = "rbRedGuest";
+            this.rbRedGuest.Size = new System.Drawing.Size(215, 30);
+            this.rbRedGuest.TabIndex = 25;
+            this.rbRedGuest.Text = "Красная карточка";
+            this.rbRedGuest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbRedGuest.UseVisualStyleBackColor = true;
+            this.rbRedGuest.CheckedChanged += new System.EventHandler(this.rbRedGuest_CheckedChanged);
+            // 
+            // rbRedHome
+            // 
+            this.rbRedHome.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbRedHome.FlatAppearance.BorderSize = 2;
+            this.rbRedHome.FlatAppearance.CheckedBackColor = System.Drawing.Color.Green;
+            this.rbRedHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbRedHome.Location = new System.Drawing.Point(6, 199);
+            this.rbRedHome.Name = "rbRedHome";
+            this.rbRedHome.Size = new System.Drawing.Size(212, 30);
+            this.rbRedHome.TabIndex = 24;
+            this.rbRedHome.Text = "Красная карточка";
+            this.rbRedHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbRedHome.UseVisualStyleBackColor = true;
+            this.rbRedHome.CheckedChanged += new System.EventHandler(this.rbRedHome_CheckedChanged);
             // 
             // frmMain
             // 
@@ -1207,7 +1279,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDown3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbTime;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox tbPeriod;
         private System.Windows.Forms.Label label8;
@@ -1252,6 +1324,11 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.NumericUpDown nudPossessionClub2;
         private System.Windows.Forms.Button btnGroupStandings;
+        private System.Windows.Forms.Button btnConnectTimeServer;
+        private System.Windows.Forms.RadioButton rbRedGuest;
+        private System.Windows.Forms.RadioButton rbRedHome;
+        private System.Windows.Forms.RadioButton rbYellowGuest;
+        private System.Windows.Forms.RadioButton rbYellowHome;
     }
 }
 
