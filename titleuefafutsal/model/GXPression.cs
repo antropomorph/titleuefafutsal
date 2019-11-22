@@ -23,7 +23,7 @@ namespace titleuefafutsal.model
     public class GXPression
     {
         private xpEngine Project;
-        private xpScene CurrentScene;
+        private xpScene CurrentScene, HomeFoulsScene, GuestFoulsScene;
 
         public GXPression(string FileName)
         {
@@ -98,6 +98,25 @@ namespace titleuefafutsal.model
                 (secondReferee as xpTextObject).TextWithTags = SecondReferee;
                 (thirdOfficial as xpTextObject).TextWithTags = ThirdOfficial;
                 (timeKeeper as xpTextObject).TextWithTags = TimeKeeper;
+
+                //CurrentScene.SceneDirector.Position = 0;
+                CurrentScene.SceneDirector.Play();
+                CurrentScene.SetOnline(0);
+            }
+        }
+
+        public void ShowFreeGraphics(string Text)
+        {
+            xpBaseObject text;
+
+            if (Project != null)
+            {
+                _HideScene();
+                Project.GetSceneByName("UFCL_LT_FreeGraphics_HD", out CurrentScene);
+
+                CurrentScene.GetObjectByName("Text", out text);
+
+                (text as xpTextObject).TextWithTags = Text;
 
                 //CurrentScene.SceneDirector.Position = 0;
                 CurrentScene.SceneDirector.Play();
@@ -284,6 +303,43 @@ namespace titleuefafutsal.model
             }
         }
 
+        public void ShowStatisticsInGame(Team Club1, Team Club2, string statisticsName, string Club1Value, string Club2Value)
+        {
+            //UFCL_OverlayClock_Statistics_HD
+            xpBaseObject clubPossession1, clubPossession2, Statistics;
+            xpBaseShader club1Logo, club2Logo;
+            xpMaterial club1LogoMaterial, club2LogoMaterial;
+
+            if (Project != null)
+            {
+                _HideScene();
+                Project.GetSceneByName("UFCL_OverlayClock_Statistics_HD", out CurrentScene);
+
+                CurrentScene.GetObjectByName("Club1", out clubPossession1);
+                CurrentScene.GetObjectByName("Club2", out clubPossession2);
+                CurrentScene.GetObjectByName("Statistics", out Statistics);
+
+                (clubPossession1 as xpTextObject).Text = Club1Value;
+                (clubPossession2 as xpTextObject).Text = Club2Value;
+                (Statistics as xpTextObject).Text = statisticsName;
+
+
+                Project.GetMaterialByName("ClubLogo1", out club1LogoMaterial);
+                club1LogoMaterial.GetShaderByName("Texture", out club1Logo);
+                club1Logo.FileName = Club1.Logo;
+                club1Logo.ReloadFile();
+
+                Project.GetMaterialByName("ClubLogo2", out club2LogoMaterial);
+                club2LogoMaterial.GetShaderByName("Texture", out club2Logo);
+                club2Logo.FileName = Club2.Logo;
+                club2Logo.ReloadFile();
+
+                //CurrentScene.SceneDirector.Position = 0;
+                CurrentScene.SceneDirector.Play();
+                CurrentScene.SetOnline(0);
+            }
+        }
+
         public void ShowStatistics(Team Club1, Team Club2, Settings settings)
         {
             xpBaseObject club1Name, club2Name, Period,
@@ -388,7 +444,8 @@ namespace titleuefafutsal.model
                 {
                     (Red as xpQuadObject).Visible = true;
                     (Yellow as xpQuadObject).Visible = false;
-                } else
+                }
+                else
                 {
                     (Red as xpQuadObject).Visible = false;
                     (Yellow as xpQuadObject).Visible = true;
@@ -443,6 +500,9 @@ namespace titleuefafutsal.model
             xpBaseShader club1Color, club2Color;
             xpMaterial club1ColorMaterial, club2ColorMaterial;
 
+            int HomeFoulsPosition = 0;
+            int GuestFoulsPosition = 0;
+
             if (Project != null)
             {
                 _HideScene();
@@ -463,21 +523,148 @@ namespace titleuefafutsal.model
                 (Timer as xpTextObject).Text = settings.Timer;
 
 
-                /*Project.GetMaterialByName("ClubLogo1", out club1LogoMaterial);
-                club1LogoMaterial.GetShaderByName("Texture", out club1Logo);
-                club1Logo.FileName = Club1Logo;
-                club1Logo.ReloadFile();
 
-                Project.GetMaterialByName("ClubLogo2", out club2LogoMaterial);
-                club2LogoMaterial.GetShaderByName("Texture", out club2Logo);
-                club2Logo.FileName = Club2Logo;
-                club2Logo.ReloadFile();*/
+                switch (settings.HomeFouls)
+                {
+                    case 0:
+                        HomeFoulsPosition = 0;
+                        break;
+                    case 1:
+                        HomeFoulsPosition = 24;
+                        break;
+                    case 2:
+                        HomeFoulsPosition = 49;
+                        break;
+                    case 3:
+                        HomeFoulsPosition = 74;
+                        break;
+                    case 4:
+                        HomeFoulsPosition = 99;
+                        break;
+                    case 5:
+                        HomeFoulsPosition = 125;
+                        break;
+                }
+                if (settings.HomeFouls > 5)
+                {
+                    HomeFoulsPosition = 125;
+                }
+
+                switch (settings.GuestFouls)
+                {
+                    case 0:
+                        GuestFoulsPosition = 0;
+                        break;
+                    case 1:
+                        GuestFoulsPosition = 24;
+                        break;
+                    case 2:
+                        GuestFoulsPosition = 49;
+                        break;
+                    case 3:
+                        GuestFoulsPosition = 74;
+                        break;
+                    case 4:
+                        GuestFoulsPosition = 99;
+                        break;
+                    case 5:
+                        GuestFoulsPosition = 125;
+                        break;
+                }
+                if (settings.GuestFouls > 5)
+                {
+                    GuestFoulsPosition = 125;
+                }
+
+                Project.GetSceneByName("CounterFouls_left_HD", out HomeFoulsScene);
+                HomeFoulsScene.SceneDirector.Position = HomeFoulsPosition;
+
+                Project.GetSceneByName("CounterFouls_right_HD", out GuestFoulsScene);
+                GuestFoulsScene.SceneDirector.Position = GuestFoulsPosition;
 
                 //CurrentScene.SceneDirector.Position = 0;
                 CurrentScene.SceneDirector.Play();
                 CurrentScene.SetOnline(0);
+
+                //FoulsScene.SceneDirector.Play();
+                HomeFoulsScene.SetOnline(0, 1);
+                GuestFoulsScene.SetOnline(0, 2);
             }
         }
+
+        public void SetHomeFouls(int Fouls)
+        {
+            int FoulsPosition = 0;
+
+            if (Project != null)
+            {
+                if (HomeFoulsScene != null && HomeFoulsScene.IsOnline)
+                {
+                    switch (Fouls)
+                    {
+                        case 1:
+                            FoulsPosition = 0;
+                            break;
+                        case 2:
+                            FoulsPosition = 25;
+                            break;
+                        case 3:
+                            FoulsPosition = 50;
+                            break;
+                        case 4:
+                            FoulsPosition = 75;
+                            break;
+                        case 5:
+                            FoulsPosition = 100;
+                            break;
+                    }
+                    if (Fouls > 5)
+                    {
+                        FoulsPosition = 125;
+                    }
+                    HomeFoulsScene.SceneDirector.Position = FoulsPosition;
+                    HomeFoulsScene.SceneDirector.Play();
+                }
+            }
+        }
+
+
+        public void SetGuestFouls(int Fouls)
+        {
+            int FoulsPosition = 0;
+
+            if (Project != null)
+            {
+                if (GuestFoulsScene != null && GuestFoulsScene.IsOnline)
+                {
+                    switch (Fouls)
+                    {
+                        case 1:
+                            FoulsPosition = 0;
+                            break;
+                        case 2:
+                            FoulsPosition = 25;
+                            break;
+                        case 3:
+                            FoulsPosition = 50;
+                            break;
+                        case 4:
+                            FoulsPosition = 75;
+                            break;
+                        case 5:
+                            FoulsPosition = 100;
+                            break;
+                    }
+                    if (Fouls > 5)
+                    {
+                        FoulsPosition = 125;
+                    }
+                    GuestFoulsScene.SceneDirector.Position = FoulsPosition;
+                    GuestFoulsScene.SceneDirector.Play();
+                }
+            }
+        }
+
         public void ShowPlayer(string ClubLogo, string PlayerNumber, string PlayerName)
         {
             xpBaseShader clubLogo;
@@ -639,6 +826,15 @@ namespace titleuefafutsal.model
 
         private void _HideScene()
         {
+            if (HomeFoulsScene != null && HomeFoulsScene.IsOnline)
+            {
+                HomeFoulsScene.SetOffline();
+            }
+            if (GuestFoulsScene != null && GuestFoulsScene.IsOnline)
+            {
+                GuestFoulsScene.SetOffline();
+            }
+
             if (Project != null && CurrentScene.Name != null)
             {
                 CurrentScene.SceneDirector.Play(true);

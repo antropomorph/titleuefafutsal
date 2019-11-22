@@ -16,9 +16,9 @@
         public bool UseTimeServer = true;
 
         public string Timer;
-        public string HomeScore;
-        public string GuestScore;
-        public string HomeFouls;
-        public string GuestFouls;
+        public string  HomeScore = "0";
+        public string GuestScore = "0";
+        public int HomeFouls = 0;
+        public int GuestFouls = 0;
     }
 }

@@ -16,6 +16,10 @@ namespace titleuefafutsal.model
         private const int SLEEP_TIME = 10;
         public delegate void MessageStreamDelegate(string str);
         public event MessageStreamDelegate LogMessage = delegate { };
+        public event MessageStreamDelegate SetHomeScore = delegate { };
+        public event MessageStreamDelegate SetGuestScore = delegate { };
+        public event MessageStreamDelegate SetHomeFouls = delegate { };
+        public event MessageStreamDelegate SetGuestFouls = delegate { };
 
         private Thread threadProcessRemoteData;
         private bool isStarted = false;
@@ -94,21 +98,25 @@ namespace titleuefafutsal.model
                             if (matchInfo.leftScore != null)
                             {
                                 gameInfo.HomeScore = (string)matchInfo.leftScore;
+                                SetHomeScore(gameInfo.HomeScore);
                                 //message.AppendLine(gameInfo.GetHomeScore());
                             }
                             if (matchInfo.rightScore != null)
                             {
                                 gameInfo.GuestScore = (string)matchInfo.rightScore;
+                                SetGuestScore(gameInfo.GuestScore);
                                 //message.AppendLine(gameInfo.GetGuestScore());
                             }
                             if (matchInfo.leftFoul != null)
                             {
-                                gameInfo.HomeFouls = (string)matchInfo.leftFoul;
+                                gameInfo.HomeFouls = (int)matchInfo.leftFoul;
+                                SetHomeFouls(gameInfo.HomeFouls.ToString());
                                 //message.AppendLine(gameInfo.GetHomeFouls());
                             }
                             if (matchInfo.rightFoul != null)
                             {
-                                gameInfo.GuestFouls = (string)matchInfo.rightFoul;
+                                gameInfo.GuestFouls = (int)matchInfo.rightFoul;
+                                SetGuestFouls(gameInfo.GuestFouls.ToString());
                                 //message.AppendLine(gameInfo.GetGuestFouls());
                             }
 

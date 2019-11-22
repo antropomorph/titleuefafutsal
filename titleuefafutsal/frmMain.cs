@@ -292,18 +292,23 @@ namespace titleuefafutsal
 
         private void numericUpDown3_ValueChanged(object sender, EventArgs e)
         {
+            gameSettings.HomeFouls = Convert.ToInt32((sender as NumericUpDown).Value);
+            if (xpression != null)
+                xpression.SetHomeFouls(gameSettings.HomeFouls);
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            Club1.Score = (sender as NumericUpDown).Value.ToString();
+            //Club1.Score = (sender as NumericUpDown).Value.ToString();
+            Club1.Score = gameSettings.HomeScore;
             if (xpression != null)
                 xpression.SetScore(Club1.Score, Club2.Score);
         }
 
         private void numericUpDown4_ValueChanged(object sender, EventArgs e)
         {
-            Club2.Score = (sender as NumericUpDown).Value.ToString();
+            //Club2.Score = (sender as NumericUpDown).Value.ToString();
+            Club2.Score = gameSettings.GuestScore;
             if (xpression != null)
                 xpression.SetScore(Club1.Score, Club2.Score);
         }
@@ -312,7 +317,12 @@ namespace titleuefafutsal
         {
             if (xpression != null)
                 if ((sender as RadioButton).Checked)
+                {
+                    gameSettings.Period = tbPeriod.Text;
+                    Log(tbLog, "HomeFouls = " + gameSettings.HomeFouls.ToString());
+                    Log(tbLog, "GuestFouls = " + gameSettings.GuestFouls.ToString());
                     xpression.ShowUpscore(Club1, Club2, gameSettings);
+                }
         }
 
         private void cbClub2_SelectedValueChanged(object sender, EventArgs e)
@@ -443,6 +453,11 @@ namespace titleuefafutsal
             remoteClient = new RemoteClient(gameSettings);
             remoteClient.LogMessage += (s) => Invoke(new Action(() => Log(tbLog, s)));
             remoteClient.LogMessage += (s) => Invoke(new Action(() => SetTime(tbTime, s)));
+            remoteClient.SetHomeScore += (s) => Invoke(new Action(() => SetHomeScore(nudHomeScore, s)));
+            remoteClient.SetGuestScore += (s) => Invoke(new Action(() => SetGuestScore(nudGuestScore, s)));
+            remoteClient.SetHomeFouls += (s) => Invoke(new Action(() => SetHomeFouls(nudHomeFouls, s)));
+            remoteClient.SetGuestFouls += (s) => Invoke(new Action(() => SetGuestFouls(nudGuestFouls, s)));
+
             remoteClient.Start();
         }
 
@@ -452,6 +467,30 @@ namespace titleuefafutsal
             {
                 remoteClient.Stop();
             }
+        }
+
+        public void SetHomeScore(NumericUpDown numericUpDown, string Text)
+        {
+            numericUpDown.Invoke(new Action(() =>
+                numericUpDown.Value = Convert.ToInt32(Text)));
+        }
+
+        public void SetGuestScore(NumericUpDown numericUpDown, string Text)
+        {
+            numericUpDown.Invoke(new Action(() =>
+                numericUpDown.Value = Convert.ToInt32(Text)));
+        }
+
+        public void SetHomeFouls(NumericUpDown numericUpDown, string Text)
+        {
+            numericUpDown.Invoke(new Action(() =>
+                numericUpDown.Value = Convert.ToInt32(Text)));
+        }
+
+        public void SetGuestFouls(NumericUpDown numericUpDown, string Text)
+        {
+            numericUpDown.Invoke(new Action(() =>
+                numericUpDown.Value = Convert.ToInt32(Text)));
         }
 
         private void tbTime_TextChanged(object sender, EventArgs e)
@@ -497,6 +536,23 @@ namespace titleuefafutsal
                 if ((sender as RadioButton).Checked)
 
                     xpression.ShowCard(Club2, Player2, true);
+        }
+
+        private void nudGuestFouls_ValueChanged(object sender, EventArgs e)
+        {
+            gameSettings.GuestFouls = Convert.ToInt32((sender as NumericUpDown).Value);
+            if (xpression != null)
+                xpression.SetGuestFouls(gameSettings.GuestFouls);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmFreeGraphics frmFreeGraphics = new FrmFreeGraphics();
+            frmFreeGraphics.Owner = this;
+            if (frmFreeGraphics.ShowDialog() == DialogResult.OK)
+            {
+                rbClearGraphics.Checked = false;
+            }
         }
     }
 }

@@ -40,7 +40,38 @@ namespace titleuefafutsal
             main = this.Owner as frmMain;
         }
 
+        private void btAttemptsOnTarget_Click(object sender, EventArgs e)
+        {
+            SaveClubsStatistics();
+
+            if (main.xpression != null)
+                main.xpression.ShowStatisticsInGame(Club1, Club2, "ATTEMPTS ON TARGET", tbClub1AttemtpsOnTarget.Text, tbClub2AttemtpsOnTarget.Text);
+        }
+
+        private void btnTotalAttempts_Click(object sender, EventArgs e)
+        {
+            SaveClubsStatistics();
+
+            if (main.xpression != null)
+                main.xpression.ShowStatisticsInGame(Club1, Club2, "TOTAL ATTEMPTS", tbClub1TotalAttempts.Text, tbClub2TotalAttempts.Text);
+        }
+
+        private void btnCorners_Click(object sender, EventArgs e)
+        {
+            SaveClubsStatistics();
+
+            if (main.xpression != null)
+                main.xpression.ShowStatisticsInGame(Club1, Club2, "CORNERS", tbClub1Corners.Text, tbClub2Corners.Text);
+        }
+
         private void btnOK_Click(object sender, EventArgs e)
+        {
+            SaveClubsStatistics();
+            if (main.xpression != null)
+                main.xpression.ShowStatistics(Club1, Club2, main.gameSettings);
+        }
+
+        private void SaveClubsStatistics()
         {
             Club1.AttemptsOnTarget = tbClub1AttemtpsOnTarget.Text;
             Club1.TotalAttempts = tbClub1TotalAttempts.Text;
@@ -61,9 +92,6 @@ namespace titleuefafutsal
             Club2.Fouls2 = tbClub22ndFouls.Text;
             Club2.Yellow2 = tbClub22ndYellow.Text;
             Club2.Red2 = tbClub22ndRed.Text;
-
-            if (main.xpression != null)
-                main.xpression.ShowStatistics(Club1, Club2, main.gameSettings);
         }
     }
 }
